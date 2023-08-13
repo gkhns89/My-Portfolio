@@ -1,24 +1,19 @@
-import logo from "./logo.svg";
 import "./App.css";
+import "./index.css";
+import "./reset.css";
+import Header from "./Components/Header";
+import Hero from "./Components/Hero";
+import React, { useState } from "react";
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+</style>;
 
 function App() {
+  const [toggle, setToggle] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={toggle ? "App dark" : "App"}>
+      <Header toggle={toggle} setToggle={setToggle} />
+      <Hero />
     </div>
   );
 }

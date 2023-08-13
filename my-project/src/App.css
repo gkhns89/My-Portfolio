@@ -1,38 +1,175 @@
 .App {
-  text-align: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2% 8% 2% 8%;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  color: #6b7280;
+  transition: all 1s;
+  height: 1280px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App button {
+  padding: 12px 32px 12px 32px;
+  color: #3730a3;
+  border: 1px solid #3730a3;
+  border-radius: 6px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header .darkMode {
+  font-size: 0.938rem;
+  font-weight: 700;
+  padding-top: 2rem;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+header .darkMode a {
+  color: #4731d3;
+}
+header nav {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav .rightNav ul {
+  font-size: 1.125rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  align-items: center;
+}
+
+header .logo span {
+  color: #7b61ff;
+  font-size: 1.5rem;
+  font-style: normal;
+  line-height: 2rem;
+}
+
+.radio-btn {
+  width: 55px;
+  height: 24px;
+  padding: 2px;
+  background-color: #4731d3;
+  border-radius: 100px;
+  overflow: hidden;
+  cursor: pointer;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.radio-btn .radio-inner {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background-color: #ffe86e;
+  border-radius: 50%;
+  transition: all 1s;
+}
+.radio-btn .radio-inner::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: -51%;
+  width: 100%;
+  height: 100%;
+  background-color: #e92577;
+  border-radius: 50%;
+  transform: scale(0.05);
+  transition: all 1s;
+}
+
+.radio-btn .radio-inner.active {
+  transform: translateX(calc(55px - 20px));
+}
+.radio-btn .radio-inner.active::before {
+  background-color: #3a3a3a;
+  left: -10px;
+  transform: scale(1);
+}
+
+.heroContainer {
+  padding-top: 5rem;
+}
+
+.heroContainer .textDeco {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #4338ca;
 }
 
-.App-link {
-  color: #61dafb;
+.heroContainer .textDeco span {
+  background: none;
+  margin: 0 15px;
+}
+.heroContainer .textDeco:before {
+  background: #3730a3;
+  height: 1px;
+  flex: 1;
+  content: "";
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.heroContainer .textDeco:after {
+  height: 1px;
+  flex: 6;
+  content: "";
+}
+
+.heroContainer .textDeco.left:after {
+  background: none;
+}
+.heroContainer .textDeco.right:before {
+  background: none;
+}
+
+.heroContent {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.heroContent img {
+  max-width: 475px;
+  max-height: 325px;
+  border-radius: 1.125rem;
+}
+
+.heroContent .leftHero h1 {
+  padding: 2.5rem 0 2.5rem 0;
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.heroContent .leftHero p {
+  padding: 0 0 2.5rem 0;
+  max-width: 500px;
+}
+.heroContent .leftHero .actions {
+  display: flex;
+  justify-content: left;
+  gap: 1rem;
+}
+
+.App .hire {
+  color: #fff;
+  background-color: #3730a3;
+  border: 1px solid #3730a3;
+}
+
+/* DARK MODE */
+.dark {
+  background-color: #383838;
+  color: #ffffff;
 }
