@@ -40,9 +40,19 @@ const Header = (props) => {
         </div>
         <div className="rightNav">
           <ul>
-            <li>Skills</li>
-            <li>Projects</li>
-            <button className="hire">Hire me</button>
+            <li>
+              <a className="hover:text-[#3730a3]" href="#skills">
+                Skills
+              </a>
+            </li>
+            <li>
+              <a className="hover:text-[#3730a3]" href="#projects">
+                Projects
+              </a>
+            </li>
+            <button className="hire">
+              Hire me
+            </button>
           </ul>
         </div>
       </nav>

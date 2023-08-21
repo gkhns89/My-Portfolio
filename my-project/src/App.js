@@ -4,6 +4,7 @@ import "./reset.css";
 import Header from "./Components/Header";
 import Hero from "./Components/Hero";
 import Skills from "./Components/Skills";
+import Profile from "./Components/Profile";
 
 import React, { useState } from "react";
 <style>
@@ -17,6 +18,7 @@ function App() {
       <Header toggle={toggle} setToggle={setToggle} />
       <Hero />
       <Skills />
+      <Profile />
     </div>
   );
 }

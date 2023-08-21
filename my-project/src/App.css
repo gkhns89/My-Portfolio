@@ -1,16 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .App {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 2% 8% 2% 8%;
+  padding: 2% 8%;
   font-weight: 400;
   font-family: "Inter", sans-serif;
   color: #6b7280;
-  transition: all 1s;
   height: 1280px;
 }
 
 .App button {
-  padding: 12px 32px 12px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 32px;
   color: #3730a3;
   border: 1px solid #3730a3;
   border-radius: 6px;
@@ -126,13 +132,6 @@ header .logo span {
   content: "";
 }
 
-.heroContainer .textDeco.left:after {
-  background: none;
-}
-.heroContainer .textDeco.right:before {
-  background: none;
-}
-
 .heroContent {
   display: flex;
   justify-content: space-between;
@@ -166,6 +165,8 @@ header .logo span {
   color: #fff;
   background-color: #3730a3;
   border: 1px solid #3730a3;
+  transition: all 1s;
+  @apply hover:bg-white hover:text-[#3730a3];
 }
 
 .skillsContainer h1 {

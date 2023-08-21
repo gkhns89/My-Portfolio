@@ -2,7 +2,7 @@ import React from "react";
 
 const Skills = () => {
   return (
-    <div className="skillsContainer">
+    <div id="skills" className="skillsContainer">
       <h1>Skills</h1>
       <div className="contentWrapper">
         <div className="content">
