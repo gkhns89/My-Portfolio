@@ -9,19 +9,19 @@ const Profile = () => {
           <h2 className="text-3xl text-[#4338ca] font-medium">Profile</h2>
 
           <table className="mt-[1.313rem]">
-            <tr>
+            <tr className="text-left leading-8">
               <td className="font-semibold text-black pr-5">Doğum Tarihi</td>
               <td>22.09.1989</td>
             </tr>
-            <tr>
+            <tr className="text-left leading-8">
               <td className="font-semibold text-black pr-5">İkamet Şehri</td>
               <td>İstanbul</td>
             </tr>
-            <tr>
+            <tr className="text-left leading-8">
               <td className="font-semibold text-black pr-5">Eğitim Durumu</td>
               <td>İstanbul Aydın Ünv. Bilgisayar Müh. (İng.)</td>
             </tr>
-            <tr>
+            <tr className="text-left leading-8">
               <td className="font-semibold text-black pr-5">
                 Tercih Ettiği Rol
               </td>
@@ -32,7 +32,7 @@ const Profile = () => {
         <div>
           <h2 className="text-3xl text-[#4338ca] font-medium">About Me</h2>
           <div className="max-w-[560px]">
-            <p>
+            <p className="mt-[1.313rem]">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam
               aut, odit laborum aliquam voluptatum nisi mollitia.{" "}
             </p>
@@ -44,6 +44,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
+      <hr className="solid" />
     </div>
   );
 };
