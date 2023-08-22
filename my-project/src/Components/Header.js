@@ -2,7 +2,7 @@ const Header = (props) => {
   const { toggle, setToggle } = props;
   return (
     <header>
-      <div className="darkMode">
+      <div className="text-[0.938rem] font-bold pt-8 flex justify-end items-center gap-[0.65rem]">
         <div
           className={toggle ? "radio-btn bg" : "radio-btn"}
           onClick={() => setToggle(!toggle)}
@@ -10,12 +10,15 @@ const Header = (props) => {
           <div className={toggle ? "radio-inner active" : "radio-inner"}></div>
         </div>
         <span>|</span>
-        <div className="changeLang">
-          <a href="/">TÜRKÇE</a>'YE GEÇ
+        <div>
+          <a className="text-[#4731d3]" href="/">
+            TÜRKÇE
+          </a>
+          'YE GEÇ
         </div>
       </div>
-      <nav>
-        <div className="logo">
+      <nav className="mt-8 flex justify-between items-center">
+        <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="64"
@@ -38,8 +41,8 @@ const Header = (props) => {
             </text>
           </svg>
         </div>
-        <div className="rightNav">
-          <ul>
+        <div>
+          <ul className="text-lg font-medium flex flex-row gap-16 items-center">
             <li>
               <a className="hover:text-[#3730a3]" href="#skills">
                 Skills
@@ -50,7 +53,7 @@ const Header = (props) => {
                 Projects
               </a>
             </li>
-            <button className="hire">
+            <button className="display-flex items-center justify-between py-[12px] px-[32px] border text-[#3730a3] border-[#3730a3]  hover:text-white  hover:bg-[#3730a3] rounded-md duration-1000">
               Hire me
             </button>
           </ul>

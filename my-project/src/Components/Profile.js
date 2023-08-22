@@ -44,7 +44,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      <hr className="solid" />
+      <hr className="my-8 mx-0 border-t border-[#bab2e7]" />
     </div>
   );
 };

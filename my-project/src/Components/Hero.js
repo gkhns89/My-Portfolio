@@ -2,21 +2,25 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div id="hero" className="heroContainer">
-      <p className="textDeco">
-        <span>Gökhan Şişman</span>
+    <div id="hero" className="my-">
+      <p className="flex items-center justify-center text-xl font-medium text-[#4338CA] before:bg-[#3730A3] before:h-[1px] before:flex-1 after:h-[1px] after:flex-[6]">
+        <span className="bg-none mx-4">Gökhan Şişman</span>
       </p>
-      <div className="heroContent">
-        <div className="leftHero">
-          <h1>Creative thinker Minimalism lover</h1>
-          <p>
+      <div className="flex justify-between gap-8">
+        <div>
+          <h1 className="py-10 px-0 text-7xl font-bold text-[#1F2937]">
+            Creative thinker Minimalism lover
+          </h1>
+          <p className="max-w-lg pb-10">
             Hi, I’m Almila. I’m a full-stack developer. If you are looking for a
             Developer who to craft solid and scalable frontend products with
             great user experiences. Let’s shake hands with me.
           </p>
-          <div className="actions">
-            <button className="hire">Hire me</button>
-            <button>
+          <div className="flex justify-start gap-4 ">
+            <button className="flex justify-center items-center  max-h-[52px] min-w-[139px] py-[12px] px-[20px] border border-[#3730a3] rounded-md text-white  bg-[#3730a3]   hover:bg-white hover:text-[#3730a3] duration-1000">
+              Hire me
+            </button>
+            <button className="flex items-center justify-evenly max-h-[52px] min-w-[139px] py-[12px] px-[20px] border border-[#3730a3] rounded-md hover:text-white   hover:bg-[#3730a3]   bg-white text-[#3730a3] duration-1000">
               <svg
                 className="w-4 h-4 mr-2 -ml-1"
                 aria-hidden="true"
@@ -34,7 +38,7 @@ const Hero = () => {
               </svg>
               GitHub
             </button>
-            <button>
+            <button className="flex items-center justify-evenly max-h-[52px] min-w-[139px] py-[12px] px-[20px] border border-[#3730a3] rounded-md hover:text-white   hover:bg-[#3730a3]   bg-white text-[#3730a3] duration-1000">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-4 h-4 mr-2 -ml-1"
@@ -47,7 +51,13 @@ const Hero = () => {
             </button>
           </div>
         </div>
-        <img src="../myPic.png" alt="Me"></img>
+        <div className="w-[70%] drop-shadow-2xl ml-auto mr-0 mb-auto mt-10 lg:mr-0 md:mr-auto sm:mr-auto max-[640px]:mr-auto">
+          <img
+            className="  mb-4 rounded-3xl lg:m-auto md:m-auto"
+            src="../myPic.png"
+            alt="Me"
+          ></img>
+        </div>
       </div>
     </div>
   );
