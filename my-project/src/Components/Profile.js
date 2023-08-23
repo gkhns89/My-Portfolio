@@ -9,20 +9,20 @@ const Profile = () => {
           <h2 className="text-3xl text-[#4338ca] font-medium">Profile</h2>
 
           <table className="mt-[1.313rem]">
-            <tr className="text-left leading-8">
-              <td className="font-semibold text-black pr-5">Doğum Tarihi</td>
+            <tr className="text-left text-black  leading-8">
+              <td className="font-semibold pr-5 align-top ">Doğum Tarihi</td>
               <td>22.09.1989</td>
             </tr>
-            <tr className="text-left leading-8">
-              <td className="font-semibold text-black pr-5">İkamet Şehri</td>
+            <tr className="text-left  text-black leading-8">
+              <td className="font-semibold pr-5 align-top">İkamet Şehri</td>
               <td>İstanbul</td>
             </tr>
-            <tr className="text-left leading-8">
-              <td className="font-semibold text-black pr-5">Eğitim Durumu</td>
+            <tr className="text-left text-black leading-8">
+              <td className="font-semibold  pr-5 align-top">Eğitim Durumu</td>
               <td>İstanbul Aydın Ünv. Bilgisayar Müh. (İng.)</td>
             </tr>
-            <tr className="text-left leading-8">
-              <td className="font-semibold text-black pr-5">
+            <tr className="text-left text-black leading-8">
+              <td className="font-semibold  pr-5 min-w-[145px] align-top">
                 Tercih Ettiği Rol
               </td>
               <td>Frontend, UI</td>

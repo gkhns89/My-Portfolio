@@ -2,11 +2,11 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div id="hero" className="my-">
-      <p className="flex items-center justify-center text-xl font-medium text-[#4338CA] before:bg-[#3730A3] before:h-[1px] before:flex-1 after:h-[1px] after:flex-[6]">
+    <div id="hero" className="mt-20">
+      <p className="flex items-center justify-center text-xl font-medium text-[#4338CA] before:bg-[#3730A3] before:h-[1px] before:flex-1 after:h-[1px] after:flex-[6] after:max-[640px]:bg-[#3730A3] after:max-[640px]:flex-[1] after:max-[640px]:duration-1000 after:duration-1000">
         <span className="bg-none mx-4">Gökhan Şişman</span>
       </p>
-      <div className="flex justify-between gap-8">
+      <div className="flex justify-between gap-8 max-[1024px]:flex-col-reverse">
         <div>
           <h1 className="py-10 px-0 text-7xl font-bold text-[#1F2937]">
             Creative thinker Minimalism lover
@@ -51,7 +51,7 @@ const Hero = () => {
             </button>
           </div>
         </div>
-        <div className="w-[70%] drop-shadow-2xl ml-auto mr-0 mb-auto mt-10 lg:mr-0 md:mr-auto sm:mr-auto max-[640px]:mr-auto">
+        <div className="w-[70%] drop-shadow-2xl ml-auto mr-0 mb-auto mt-10 md:mr-auto sm:mr-auto max-[640px]:mr-auto">
           <img
             className="  mb-4 rounded-3xl lg:m-auto md:m-auto"
             src="../myPic.png"

@@ -17,7 +17,7 @@ const Header = (props) => {
           'YE GEÇ
         </div>
       </div>
-      <nav className="mt-8 flex justify-between items-center">
+      <nav className="mt-8  flex justify-between items-center">
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +41,7 @@ const Header = (props) => {
             </text>
           </svg>
         </div>
-        <div>
+        <div className="ml-4">
           <ul className="text-lg font-medium flex flex-row gap-16 items-center">
             <li>
               <a className="hover:text-[#3730a3]" href="#skills">
