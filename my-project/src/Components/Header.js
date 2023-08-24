@@ -1,7 +1,24 @@
-
+import { useContext } from "react";
+import { LanguageContext } from "../Contexts/LnContext";
+import { contentData } from "../Sources/Data/LnData";
 
 const Header = (props) => {
+  const { languagePreference, setLanguagePreference } =
+    useContext(LanguageContext);
   const { toggle, setToggle } = props;
+
+  const handleOnClick = (lang) => {
+    if (lang === "en") {
+      setLanguagePreference("en");
+      document.documentElement.lang = "en";
+      return;
+    } else {
+      setLanguagePreference("tr");
+      document.documentElement.lang = "tr";
+      return;
+    }
+  };
+
   return (
     <header>
       <div className="text-[0.938rem] font-bold pt-8 flex justify-end items-center gap-[0.65rem]">
@@ -18,14 +35,24 @@ const Header = (props) => {
           <div className={toggle ? "radio-inner active" : "radio-inner"}></div>
         </div>
         <span className="dark:text-[#777777]">
-          {toggle ? "DARK MODE" : "LIGHT MODE"}
+          {toggle
+            ? contentData[languagePreference.toLowerCase()].header.mode[0]
+            : contentData[languagePreference.toLowerCase()].header.mode[1]}
         </span>
         <span>|</span>
-        <div className="dark:text-[#777777]">
-          <a className="text-[#4731d3] dark:text-[#BAB2E7]" href="/">
-            TÜRKÇE
+        <div className="dark:text-[#777777] ">
+          <a
+            className="text-[#4731d3] dark:text-[#BAB2E7] cursor-pointer"
+            onClick={() => {
+              handleOnClick(
+                contentData[languagePreference.toLowerCase()].header
+                  .lngbutton[1]
+              );
+            }}
+          >
+            {contentData[languagePreference.toLowerCase()].header.lngbutton[0]}
           </a>
-          'YE GEÇ
+          {contentData[languagePreference.toLowerCase()].header.to}
         </div>
       </div>
       <nav className="mt-8  flex justify-between items-center">
@@ -59,7 +86,7 @@ const Header = (props) => {
                 className="hover:text-[#3730a3] dark:text-[#6B7280] dark:hover:text-white"
                 href="#skills"
               >
-                Skills
+                {contentData[languagePreference.toLowerCase()].header.skills}
               </a>
             </li>
             <li>
@@ -67,11 +94,11 @@ const Header = (props) => {
                 className="hover:text-[#3730a3] dark:text-[#6B7280] dark:hover:text-white"
                 href="#projects"
               >
-                Projects
+                {contentData[languagePreference.toLowerCase()].header.projects}
               </a>
             </li>
             <button className="display-flex items-center justify-between py-[12px] px-[32px] border text-[#3730a3] border-[#3730a3]  hover:text-white  hover:bg-[#3730a3] dark:text-black hover:dark:text-white hover:dark:bg-[#767676] dark:border-[#ffffff] dark:bg-[#E1E1FF]  hover:dark:border-[#767676] rounded-md duration-1000">
-              Hire me
+              {contentData[languagePreference.toLowerCase()].header.hire}
             </button>
           </ul>
         </div>
