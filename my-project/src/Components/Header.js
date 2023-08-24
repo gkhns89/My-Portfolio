@@ -5,7 +5,7 @@ const Header = (props) => {
       <div className="text-[0.938rem] font-bold pt-8 flex justify-end items-center gap-[0.65rem]">
         <div
           className={toggle ? "radio-btn bg" : "radio-btn"}
-          onClick={() => setToggle(!toggle)}
+          onClick={() => setToggle(toggle)}
         >
           <div className={toggle ? "radio-inner active" : "radio-inner"}></div>
         </div>

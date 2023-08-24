@@ -22,17 +22,17 @@ function App() {
     notify();
   }, []);
 
-  const [toggle, setToggle] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+
+    document.querySelector("html").classList.toggle("dark", darkMode);
+  };
+
   return (
-    <div
-      className={
-        toggle
-          ? "dark max-w-[1440px] my-0 mx-auto py-[2%] px-[8%] font-normal text-[#ffffff] bg-[#252128] duration-1000"
-          : "max-w-[1440px] my-0 mx-auto py-[2%] px-[8%] font-normal text-[#6B7280] duration-1000"
-      }
-    >
+    <div className="w-full my-0 mx-auto pt-[2%] px-[8%] font-normal  dark:text-[#ffffff] dark:bg-[#252128]  text-[#6B7280] duration-1000">
       <ToastContainer limit={1} transition={Slide} />
-      <Header toggle={toggle} setToggle={setToggle} />
+      <Header toggle={!darkMode} setToggle={toggleDarkMode} />
       <Hero />
       <Skills />
       <Profile />
