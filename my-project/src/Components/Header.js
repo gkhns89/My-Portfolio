@@ -19,6 +19,8 @@ const Header = (props) => {
     }
   };
 
+  const hData = contentData[languagePreference.toLowerCase()].header;
+
   return (
     <header>
       <div className="text-[0.938rem] font-bold pt-8 flex justify-end items-center gap-[0.65rem]">
@@ -35,24 +37,19 @@ const Header = (props) => {
           <div className={toggle ? "radio-inner active" : "radio-inner"}></div>
         </div>
         <span className="dark:text-[#777777]">
-          {toggle
-            ? contentData[languagePreference.toLowerCase()].header.mode[0]
-            : contentData[languagePreference.toLowerCase()].header.mode[1]}
+          {toggle ? hData.mode[0] : hData.mode[1]}
         </span>
         <span>|</span>
         <div className="dark:text-[#777777] ">
-          <a
-            className="text-[#4731d3] dark:text-[#BAB2E7] cursor-pointer"
+          <button
+            className="text-[#4731d3] dark:text-[#BAB2E7]"
             onClick={() => {
-              handleOnClick(
-                contentData[languagePreference.toLowerCase()].header
-                  .lngbutton[1]
-              );
+              handleOnClick(hData.lngbutton[1]);
             }}
           >
-            {contentData[languagePreference.toLowerCase()].header.lngbutton[0]}
-          </a>
-          {contentData[languagePreference.toLowerCase()].header.to}
+            {hData.lngbutton[0]}
+          </button>
+          {hData.to}
         </div>
       </div>
       <nav className="mt-8  flex justify-between items-center">
@@ -86,7 +83,7 @@ const Header = (props) => {
                 className="hover:text-[#3730a3] dark:text-[#6B7280] dark:hover:text-white"
                 href="#skills"
               >
-                {contentData[languagePreference.toLowerCase()].header.skills}
+                {hData.skills}
               </a>
             </li>
             <li>
@@ -94,11 +91,11 @@ const Header = (props) => {
                 className="hover:text-[#3730a3] dark:text-[#6B7280] dark:hover:text-white"
                 href="#projects"
               >
-                {contentData[languagePreference.toLowerCase()].header.projects}
+                {hData.projects}
               </a>
             </li>
             <button className="display-flex items-center justify-between py-[12px] px-[32px] border text-[#3730a3] border-[#3730a3]  hover:text-white  hover:bg-[#3730a3] dark:text-black hover:dark:text-white hover:dark:bg-[#767676] dark:border-[#ffffff] dark:bg-[#E1E1FF]  hover:dark:border-[#767676] rounded-md duration-1000">
-              {contentData[languagePreference.toLowerCase()].header.hire}
+              {hData.hire}
             </button>
           </ul>
         </div>

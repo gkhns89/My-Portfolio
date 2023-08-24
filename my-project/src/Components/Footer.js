@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { LanguageContext } from "../Contexts/LnContext";
+import { contentData } from "../Sources/Data/LnData";
 
 const Footer = () => {
+  const { languagePreference } = useContext(LanguageContext);
+  useEffect(() => {}, [languagePreference]);
+  const fData = contentData[languagePreference.toLowerCase()].footer;
   return (
     <div className=" bg-[#F9F9F9] dark:bg-[#141414] w-full px-[5%] ">
       <div className="max-w-[1440px] my-0 mx-auto">
         <div>
           <h2 className="max-w-[540px] dark:text-[#AEBCCF] text-[#1F2937] text-5xl leading-none font-semibold  pt-32 pb-20 <lg:w-[70%] md:w-[80%] sm:w-[90%] max-[640px]:w-[95%] lg:text-4xl sm:text-3xl max-[640px]:text-2xl max-[320px]:text-xl">
-            Let’s work together on your next product.
+            {fData.mTitle}
           </h2>
         </div>
 
@@ -16,6 +21,7 @@ const Footer = () => {
             <a
               className="text-[#AF0C48] dark:text-[#BAB2E7] text-xl leading-6 font-normal underline "
               href="mailto:gokhansisman@outlook.com"
+              title={fData.mailAlt}
             >
               gokhansisman@outlook.com
             </a>

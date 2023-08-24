@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { LanguageContext } from "../Contexts/LnContext";
+import { contentData } from "../Sources/Data/LnData";
 
 const Hero = () => {
+  const { languagePreference } = useContext(LanguageContext);
+  useEffect(() => {}, [languagePreference]);
+  const heroData = contentData[languagePreference.toLowerCase()].hero;
   return (
     <div id="hero" className="mt-20">
       <p className="flex items-center justify-center text-xl font-medium text-[#4338CA] dark:text-[#B7AAFF] before:bg-[#3730A3] dark:before:bg-[#B7AAFF] before:h-[1px] before:flex-1 after:h-[1px] after:flex-[6] after:max-[640px]:bg-[#3730A3] dark:after:max-[640px]:bg-[#B7AAFF] after:max-[640px]:flex-[1] after:max-[640px]:duration-1000 after:duration-1000">
@@ -9,17 +14,13 @@ const Hero = () => {
       <div className="flex justify-between gap-8 max-[1024px]:flex-col-reverse">
         <div>
           <h1 className="py-10 px-0 text-7xl font-bold text-[#1F2937] dark:text-[#AEBCCF]">
-            Creative thinker Minimalism lover
+            {heroData.mTitle}
           </h1>
-          <p className="max-w-lg pb-10">
-            Hi, I’m Almila. I’m a full-stack developer. If you are looking for a
-            Developer who to craft solid and scalable frontend products with
-            great user experiences. Let’s shake hands with me.
-          </p>
+          <p className="max-w-lg pb-10">{heroData.info}</p>
           <div className="flex justify-start gap-4 ">
             <a href="mailto:gokhansisman@outlook.com">
               <button className="flex justify-center items-center  max-h-[52px] min-w-[139px] py-[12px] px-[20px] border border-[#3730a3] dark:border-[#ffffff] hover:dark:border-[#767676]  rounded-md text-white dark:text-black hover:dark:text-white bg-[#3730a3] dark:bg-[#E1E1FF]  hover:bg-white hover:dark:bg-[#767676] hover:text-[#3730a3] duration-1000">
-                Hire me
+                {heroData.hire}
               </button>
             </a>
             <button className="flex items-center justify-center max-h-[52px] min-w-[139px] py-[12px] px-[20px] border border-[#3730a3] dark:border-[#E1E1FF]  rounded-md hover:text-white   hover:bg-[#3730a3]  hover:dark:bg-[#767676] bg-white dark:bg-[#383838] text-[#3730a3] dark:text-[#E1E1FF] duration-1000">

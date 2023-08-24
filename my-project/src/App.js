@@ -48,6 +48,7 @@ function App() {
     return () => {
       darkModeQuery.removeEventListener("change", handleThemeChange);
     };
+    // eslint-disable-next-line
   }, []);
 
   const toggleDarkMode = () => {
