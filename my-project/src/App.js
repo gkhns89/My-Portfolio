@@ -11,7 +11,9 @@ import React, { useState, useEffect } from "react";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(true);
   useEffect(() => {
+    //Toastify
     const notify = () =>
       toast("Sayfama Hoşgeldiniz!", {
         position: "top-center",
@@ -20,12 +22,36 @@ function App() {
       });
 
     notify();
+
+    //Page Load Theme Check
+    const handleThemeChange = () => {
+      if (
+        localStorage.getItem("theme") === JSON.stringify("dark") ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+        setDarkMode(!darkMode);
+      } else {
+        document.documentElement.classList.remove("dark");
+        setDarkMode(darkMode);
+      }
+    };
+
+    const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    //Theme control on page first load (if no value on localStorage, set up to user system preference, else set according localStorage)
+    handleThemeChange();
+    //Control for user system preference for dark mode
+    darkModeQuery.addEventListener("change", handleThemeChange);
+    //delete eventlistener when unmount of the component
+    return () => {
+      darkModeQuery.removeEventListener("change", handleThemeChange);
+    };
   }, []);
 
-  const [darkMode, setDarkMode] = useState(true);
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-
     document.querySelector("html").classList.toggle("dark", darkMode);
   };
 

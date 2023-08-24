@@ -1,3 +1,5 @@
+
+
 const Header = (props) => {
   const { toggle, setToggle } = props;
   return (
@@ -5,10 +7,19 @@ const Header = (props) => {
       <div className="text-[0.938rem] font-bold pt-8 flex justify-end items-center gap-[0.65rem]">
         <div
           className={toggle ? "radio-btn bg" : "radio-btn"}
-          onClick={() => setToggle(toggle)}
+          onClick={() => {
+            setToggle(toggle);
+            localStorage.setItem(
+              "theme",
+              JSON.stringify(toggle ? "light" : "dark")
+            );
+          }}
         >
           <div className={toggle ? "radio-inner active" : "radio-inner"}></div>
         </div>
+        <span className="dark:text-[#777777]">
+          {toggle ? "DARK MODE" : "LIGHT MODE"}
+        </span>
         <span>|</span>
         <div className="dark:text-[#777777]">
           <a className="text-[#4731d3] dark:text-[#BAB2E7]" href="/">
