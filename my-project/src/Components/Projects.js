@@ -4,10 +4,12 @@ import DataProjects from "../Sources/Data/DataProjects.js";
 const Projects = () => {
   return (
     <div id="projects">
-      <h1 className="text-5xl font-semibold text-[#1f2937]">Projects</h1>
+      <h1 className="text-5xl font-semibold text-[#1f2937] dark:text-[#AEBCCF]">
+        Projects
+      </h1>
       <div className="flex flex-row justify-between gap-4 ">
         {DataProjects().map((item, index) => (
-          <div key={index} className="mt-8 max-w-[300px]">
+          <div key={index} className="mt-8 mb-32 max-w-[300px]">
             <div>
               <img className="max-h-[180px]" src=".\gs.png" alt="Project" />
             </div>

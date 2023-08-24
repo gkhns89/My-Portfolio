@@ -3,12 +3,12 @@ import React from "react";
 const Hero = () => {
   return (
     <div id="hero" className="mt-20">
-      <p className="flex items-center justify-center text-xl font-medium text-[#4338CA] before:bg-[#3730A3] before:h-[1px] before:flex-1 after:h-[1px] after:flex-[6] after:max-[640px]:bg-[#3730A3] after:max-[640px]:flex-[1] after:max-[640px]:duration-1000 after:duration-1000">
+      <p className="flex items-center justify-center text-xl font-medium text-[#4338CA] dark:text-[#B7AAFF] before:bg-[#3730A3] dark:before:bg-[#B7AAFF] before:h-[1px] before:flex-1 after:h-[1px] after:flex-[6] after:max-[640px]:bg-[#3730A3] dark:after:max-[640px]:bg-[#B7AAFF] after:max-[640px]:flex-[1] after:max-[640px]:duration-1000 after:duration-1000">
         <span className="bg-none mx-4">Gökhan Şişman</span>
       </p>
       <div className="flex justify-between gap-8 max-[1024px]:flex-col-reverse">
         <div>
-          <h1 className="py-10 px-0 text-7xl font-bold text-[#1F2937]">
+          <h1 className="py-10 px-0 text-7xl font-bold text-[#1F2937] dark:text-[#AEBCCF]">
             Creative thinker Minimalism lover
           </h1>
           <p className="max-w-lg pb-10">
@@ -17,10 +17,12 @@ const Hero = () => {
             great user experiences. Let’s shake hands with me.
           </p>
           <div className="flex justify-start gap-4 ">
-            <button className="flex justify-center items-center  max-h-[52px] min-w-[139px] py-[12px] px-[20px] border border-[#3730a3] rounded-md text-white  bg-[#3730a3]   hover:bg-white hover:text-[#3730a3] duration-1000">
-              Hire me
-            </button>
-            <button className="flex items-center justify-evenly max-h-[52px] min-w-[139px] py-[12px] px-[20px] border border-[#3730a3] rounded-md hover:text-white   hover:bg-[#3730a3]   bg-white text-[#3730a3] duration-1000">
+            <a href="mailto:gokhansisman@outlook.com">
+              <button className="flex justify-center items-center  max-h-[52px] min-w-[139px] py-[12px] px-[20px] border border-[#3730a3] dark:border-[#ffffff] hover:dark:border-[#767676]  rounded-md text-white dark:text-black hover:dark:text-white bg-[#3730a3] dark:bg-[#E1E1FF]  hover:bg-white hover:dark:bg-[#767676] hover:text-[#3730a3] duration-1000">
+                Hire me
+              </button>
+            </a>
+            <button className="flex items-center justify-center max-h-[52px] min-w-[139px] py-[12px] px-[20px] border border-[#3730a3] dark:border-[#E1E1FF]  rounded-md hover:text-white   hover:bg-[#3730a3]  hover:dark:bg-[#767676] bg-white dark:bg-[#383838] text-[#3730a3] dark:text-[#E1E1FF] duration-1000">
               <svg
                 className="w-4 h-4 mr-2 -ml-1"
                 aria-hidden="true"
@@ -38,7 +40,7 @@ const Hero = () => {
               </svg>
               GitHub
             </button>
-            <button className="flex items-center justify-evenly max-h-[52px] min-w-[139px] py-[12px] px-[20px] border border-[#3730a3] rounded-md hover:text-white   hover:bg-[#3730a3]   bg-white text-[#3730a3] duration-1000">
+            <button className="flex items-center justify-evenly max-h-[52px] min-w-[139px] py-[12px] px-[20px] border border-[#3730a3] dark:border-[#E1E1FF] rounded-md hover:text-white   hover:bg-[#3730a3]  hover:dark:bg-[#767676] bg-white dark:bg-[#383838] text-[#3730a3] dark:text-[#E1E1FF] duration-1000">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-4 h-4 mr-2 -ml-1"
