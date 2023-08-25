@@ -11,19 +11,15 @@ const Projects = () => {
       <h1 className="text-5xl font-semibold text-[#1f2937] dark:text-[#AEBCCF]">
         {proData.mTitle}
       </h1>
-      <div className="flex flex-row max-[640px]:flex-col justify-between gap-4 ">
+      <div className=" mt-8 pb-32 flex flex-wrap max-[640px]:flex-col gap-8 transition ease-in-out">
         {proData.pItems.map((project) => {
           return (
             <div
               key={project.id}
-              className="mt-8 mb-32 max-w-[300px] max-[640px]:max-w-full max-[640px]:mb-6"
+              className="flex-[1_0_30%] box-border max-[640px]:max-w-full transition ease-in-out duration-1000 "
             >
               <div>
-                <img
-                  className="max-h-[180px] max-[640px]:max-h-fit "
-                  src={project.img}
-                  alt="Project"
-                />
+                <img className="max-h-fit " src={project.img} alt="Project" />
               </div>
               <h3 className="text-3xl/7 font-medium text-indigo-700 dark:text-[#CFCBFF] py-[18px]">
                 {project.title}
@@ -39,7 +35,7 @@ const Projects = () => {
                   </button>
                 ))}
               </div>
-              <div className="flex flex-row justify-between">
+              <div className="flex flex-row pb-8 justify-between">
                 <a
                   className="text-base/[16px] font-medium text-indigo-800 dark:text-[#E1E1FF]  underline underline-offset-2 "
                   href={project.gitLink}

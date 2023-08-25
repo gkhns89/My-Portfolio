@@ -27,7 +27,7 @@ const Footer = () => {
             </a>
           </div>
           <div className="text-[18px] leading-[150%] font-medium md:mt-0 sm:mt-5 max-[640px]:mt-5 max-[320px]:mt-5 max-[640px]:flex max-[640px]:flex-col">
-            <a href="#">
+            <a href="/">
               <span className="ml-5 text-[#0A0A14] dark:text-[#E1E1FF]">
                 Personal Blog
               </span>
@@ -37,6 +37,7 @@ const Footer = () => {
               className="ml-5 text-[#00AB6B] dark:text-[#17D18B]"
               href="https://github.com/gkhns89"
               target="_blank"
+              rel="noreferrer"
             >
               Github
             </a>
@@ -44,6 +45,7 @@ const Footer = () => {
               className="ml-5 text-[#0077B5] dark:text-[#0BA6F6]"
               href="https://www.linkedin.com/in/gokhansisman/"
               target="_blank"
+              rel="noreferrer"
             >
               Linkedin
             </a>

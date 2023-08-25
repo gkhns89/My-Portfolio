@@ -1,6 +1,8 @@
 import project1 from "../Images/img_p1.png";
 import project2 from "../Images/img_p2.png";
 import project3 from "../Images/img_p3.png";
+import project4 from "../Images/img_p4.png";
+import project5 from "../Images/img_p5.png";
 
 export const contentData = {
   en: {
@@ -86,6 +88,26 @@ export const contentData = {
           methods: ["redux", "axios", "react", "wordpress"],
           gitLink: "https://github.com/gkhns89/insta-clone",
           prLink: "https://github.com/gkhns89/insta-clone",
+        },
+        {
+          id: 3,
+          img: project4,
+          title: "S.S. Motaş",
+          descr:
+            "I will explain here what I want to talk about the project. This project was a very successful choice to express my functions in my run. Below are some of the special methods I use.",
+          methods: ["Wordpress", "Visual Composer", "HTML", "php"],
+          gitLink: "https://github.com/gkhns89/",
+          prLink: "https://ssmotas.com",
+        },
+        {
+          id: 4,
+          img: project5,
+          title: "Cozido Burger",
+          descr:
+            "I will explain here what I want to talk about the project. This project was a very successful choice to express my functions in my run. Below are some of the special methods I use.",
+          methods: ["Wordpress", "Visual Composer", "HTML", "php"],
+          gitLink: "https://github.com/gkhns89/",
+          prLink: "https://www.cozidoburger.com/",
         },
       ],
     },
@@ -183,7 +205,7 @@ export const contentData = {
     },
 
     footer: {
-      mTitle: "Bir sonraki projemnizi birlikte yapmaya ne dersin?",
+      mTitle: "Bir sonraki projemizi birlikte yapmaya ne dersin?",
       mailAlt: "Bana E-Posta Gönder!",
     },
   },

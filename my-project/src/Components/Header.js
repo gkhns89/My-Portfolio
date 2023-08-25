@@ -94,10 +94,8 @@ const Header = (props) => {
                 {hData.projects}
               </a>
             </li>
-            <a href="mailto:gokhansisman@outlook.com">
-              <button className="display-flex items-center justify-between py-[12px] px-[32px] border text-[#3730a3] border-[#3730a3]  hover:text-white  hover:bg-[#3730a3] dark:text-black hover:dark:text-white hover:dark:bg-[#767676] dark:border-[#ffffff] dark:bg-[#E1E1FF]  hover:dark:border-[#767676] rounded-md duration-1000">
-                {hData.hire}
-              </button>
+            <a className="hireButton" href="mailto:gokhansisman@outlook.com">
+              {hData.hire}
             </a>
           </ul>
         </div>
