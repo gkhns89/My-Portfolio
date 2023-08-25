@@ -201,6 +201,26 @@ export const contentData = {
           gitLink: "https://github.com/gkhns89/insta-clone",
           prLink: "https://github.com/gkhns89/insta-clone",
         },
+        {
+          id: 3,
+          img: project4,
+          title: "S.S. Motaş",
+          descr:
+            "I will explain here what I want to talk about the project. This project was a very successful choice to express my functions in my run. Below are some of the special methods I use.",
+          methods: ["Wordpress", "Visual Composer", "HTML", "php"],
+          gitLink: "https://github.com/gkhns89/",
+          prLink: "https://ssmotas.com",
+        },
+        {
+          id: 4,
+          img: project5,
+          title: "Cozido Burger",
+          descr:
+            "I will explain here what I want to talk about the project. This project was a very successful choice to express my functions in my run. Below are some of the special methods I use.",
+          methods: ["Wordpress", "Visual Composer", "HTML", "php"],
+          gitLink: "https://github.com/gkhns89/",
+          prLink: "https://www.cozidoburger.com/",
+        },
       ],
     },
 
