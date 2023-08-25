@@ -12,10 +12,13 @@ const Skills = () => {
       <h1 className="text-5xl text-[#1f2937] dark:text-[#AEBCCF] font-semibold">
         {sData.mTitle}
       </h1>
-      <div className="mt-3 flex flex-row justify-between gap-4">
+      <div className="mt-3 flex flex-row max-[640px]:flex-col  justify-between gap-4">
         {sData.skillItems.map((skill) => {
           return (
-            <div key={skill.id} className="max-w-xs mt-[0.688rem]">
+            <div
+              key={skill.id}
+              className="max-w-xs max-[640px]:max-w-md mt-[0.688rem]"
+            >
               <h2 className="text-3xl text-[#4338CA] dark:text-[#CFCBFF] font-medium">
                 {skill.title}
               </h2>

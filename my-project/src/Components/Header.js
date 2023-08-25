@@ -52,7 +52,7 @@ const Header = (props) => {
           {hData.to}
         </div>
       </div>
-      <nav className="mt-8  flex justify-between items-center">
+      <nav className="mt-8  flex justify-between max-[640px]:flex-col max-[640px]:gap-4 items-center">
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"

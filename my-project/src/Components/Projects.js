@@ -11,18 +11,25 @@ const Projects = () => {
       <h1 className="text-5xl font-semibold text-[#1f2937] dark:text-[#AEBCCF]">
         {proData.mTitle}
       </h1>
-      <div className="flex flex-row justify-between gap-4 ">
+      <div className="flex flex-row max-[640px]:flex-col justify-between gap-4 ">
         {proData.pItems.map((project) => {
           return (
-            <div key={project.id} className="mt-8 mb-32 max-w-[300px]">
+            <div
+              key={project.id}
+              className="mt-8 mb-32 max-w-[300px] max-[640px]:max-w-full max-[640px]:mb-6"
+            >
               <div>
-                <img className="max-h-[180px]" src=".\gs.png" alt="Project" />
+                <img
+                  className="max-h-[180px] max-[640px]:max-h-fit "
+                  src={project.img}
+                  alt="Project"
+                />
               </div>
               <h3 className="text-3xl/7 font-medium text-indigo-700 dark:text-[#CFCBFF] py-[18px]">
                 {project.title}
               </h3>
               <p className="text-sm/[17.5px]">{project.descr}</p>
-              <div className="flex flex-row justify-items-start gap-[6px] py-[18px]">
+              <div className="flex flex-wrap justify-items-start gap-[8px] py-[18px]">
                 {project.methods.map((item, index) => (
                   <button
                     key={index}

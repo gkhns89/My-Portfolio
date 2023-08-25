@@ -11,7 +11,7 @@ const Profile = () => {
       <h1 className="text-5xl font-semibold text-[#1f2937] dark:text-[#AEBCCF]">
         {pData.mTitle}
       </h1>
-      <div className="mt-8 flex flex-row justify-between gap-4">
+      <div className="mt-8 flex flex-row max-[640px]:flex-col justify-between gap-4">
         <div>
           <h2 className="text-3xl text-[#4338ca] dark:text-[#B7AAFF] font-medium">
             {pData.pTitle}

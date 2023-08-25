@@ -15,7 +15,7 @@ const Footer = () => {
           </h2>
         </div>
 
-        <div className="flex justify-between pb-28 md:flex-row sm:flex-col max-[640px]:flex-col max-[320px]:flex-col">
+        <div className="flex justify-between pb-28 md:flex-row sm:flex-col max-[640px]:flex-col max-[640px]:items-center max-[320px]:flex-col">
           <div>
             <span>👉</span>
             <a
@@ -26,8 +26,8 @@ const Footer = () => {
               gokhansisman@outlook.com
             </a>
           </div>
-          <div className="text-[18px] leading-[150%] font-medium md:mt-0 sm:mt-5 max-[640px]:mt-5 max-[320px]:mt-5 sm:text-[18px] max-[640px]:text-[14px] max-[320px]:text-[10px]">
-            <a href="/personal-blog">
+          <div className="text-[18px] leading-[150%] font-medium md:mt-0 sm:mt-5 max-[640px]:mt-5 max-[320px]:mt-5 max-[640px]:flex max-[640px]:flex-col">
+            <a href="#">
               <span className="ml-5 text-[#0A0A14] dark:text-[#E1E1FF]">
                 Personal Blog
               </span>
@@ -36,12 +36,14 @@ const Footer = () => {
             <a
               className="ml-5 text-[#00AB6B] dark:text-[#17D18B]"
               href="https://github.com/gkhns89"
+              target="_blank"
             >
               Github
             </a>
             <a
               className="ml-5 text-[#0077B5] dark:text-[#0BA6F6]"
               href="https://www.linkedin.com/in/gokhansisman/"
+              target="_blank"
             >
               Linkedin
             </a>

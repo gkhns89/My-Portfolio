@@ -1,3 +1,7 @@
+import project1 from "../Images/img_p1.png";
+import project2 from "../Images/img_p2.png";
+import project3 from "../Images/img_p3.png";
+
 export const contentData = {
   en: {
     header: {
@@ -10,6 +14,7 @@ export const contentData = {
     },
     hero: {
       mTitle: "Creative thinker Minimalism lover",
+
       info: "Hi, I’m Gökhan. I’m a Full-Stack developer. If you are looking for a Developer who to craft solid and scalable frontend products with great user experiences. Let’s shake hands with me!",
       hire: "Hire me",
     },
@@ -54,7 +59,7 @@ export const contentData = {
       pItems: [
         {
           id: 0,
-          img: "",
+          img: project1,
           title: "Project 1",
           descr:
             "I will explain here what I want to talk about the project. This project was a very successful choice to express my functions in my run. Below are some of the special methods I use.",
@@ -64,7 +69,7 @@ export const contentData = {
         },
         {
           id: 1,
-          img: "",
+          img: project2,
           title: "Project 2",
           descr:
             "I will explain here what I want to talk about the project. This project was a very successful choice to express my functions in my run. Below are some of the special methods I use.",
@@ -74,7 +79,7 @@ export const contentData = {
         },
         {
           id: 2,
-          img: "",
+          img: project3,
           title: "Project 3",
           descr:
             "I will explain here what I want to talk about the project. This project was a very successful choice to express my functions in my run. Below are some of the special methods I use.",
@@ -146,7 +151,7 @@ export const contentData = {
       pItems: [
         {
           id: 0,
-          img: "",
+          img: project1,
           title: "Project 1",
           descr:
             "I will explain here what I want to talk about the project. This project was a very successful choice to express my functions in my run. Below are some of the special methods I use.",
@@ -156,7 +161,7 @@ export const contentData = {
         },
         {
           id: 1,
-          img: "",
+          img: project2,
           title: "Project 2",
           descr:
             "I will explain here what I want to talk about the project. This project was a very successful choice to express my functions in my run. Below are some of the special methods I use.",
@@ -166,7 +171,7 @@ export const contentData = {
         },
         {
           id: 2,
-          img: "",
+          img: project3,
           title: "Project 3",
           descr:
             "I will explain here what I want to talk about the project. This project was a very successful choice to express my functions in my run. Below are some of the special methods I use.",
