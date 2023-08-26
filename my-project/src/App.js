@@ -51,6 +51,8 @@ function App() {
     // eslint-disable-next-line
   }, []);
 
+  
+
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
     document.querySelector("html").classList.toggle("dark", darkMode);
@@ -64,7 +66,7 @@ function App() {
         <Hero />
         <Skills />
         <Profile />
-        <Projects />
+        <Projects/>
       </div>
       <Footer />
     </>

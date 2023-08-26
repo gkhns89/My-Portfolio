@@ -6,20 +6,23 @@ const Projects = () => {
   const { languagePreference } = useContext(LanguageContext);
   useEffect(() => {}, [languagePreference]);
   const proData = contentData[languagePreference.toLowerCase()].projects;
+
   return (
     <div id="projects">
       <h1 className="text-5xl font-semibold text-[#1f2937] dark:text-[#AEBCCF]">
         {proData.mTitle}
       </h1>
-      <div className=" mt-8 pb-32 flex flex-wrap max-[640px]:flex-col gap-8 transition ease-in-out">
+      {/* Project Container */}
+      <div className="pContainer">
         {proData.pItems.map((project) => {
           return (
-            <div
-              key={project.id}
-              className="flex-[1_0_30%] box-border max-[640px]:max-w-full transition ease-in-out duration-1000 "
-            >
-              <div>
-                <img className="max-h-fit " src={project.img} alt="Project" />
+            //Project Cards
+
+            <div key={project.id} className="pItem">
+              <div className="  ">
+                <div className=" hover:rotate-0 rotate-3 transition duration-500">
+                  <img className="max-h-fit " src={project.img} alt="Project" />
+                </div>
               </div>
               <h3 className="text-3xl/7 font-medium text-indigo-700 dark:text-[#CFCBFF] py-[18px]">
                 {project.title}
