@@ -948,7 +948,7 @@
                     <li>Eklenti güncellemeleri için 1 yıl destek</li>
                 </ul>
                 
-                <h3 style="color: var(--primary-blue); margin-top: 30px;">🔧 Aylık Sistem Kontrol Hizmeti: 2.250 TL/ay</h3>
+                <h3 style="color: var(--primary-blue); margin-top: 30px;">🔧 Aylık Sistem Kontrol Hizmeti: 2.500 TL/ay</h3>
                 <ul>
                     <li>Düzenli güncellemeler</li>
                     <li>Güvenlik taramaları</li>
@@ -971,7 +971,7 @@
 
             <h2>Lisans ve Telif Hakları</h2>
             <div class="service-card">
-                <p>Premium eklentiler (WPML, Instagram Feed Pro, WP Rocket Cache Pro ve gerekirse Elementor Pro) geliştirici hesabımdan alınacaktır. Lisanslar yıllıktır; süresi dolduğunda müşteri yenileme yapabilir. Gelecek yıl fiyatları garanti edilmez.</p>
+                <p>Premium eklentiler (WPML, Smash Balloon Instagram Feed Pro, WP Rocket Cache Pro ve gerekirse Elementor Pro) geliştirici hesabımdan alınacaktır. Lisanslar yıllıktır; süresi dolduğunda müşteri yenileme yapabilir. Gelecek yıl fiyatları garanti edilmez.</p>
                 <p>Özel kodlama telif hakları G.Codes'a aittir. Müşteri yalnızca vegawest.com alan adı üzerinde kullanım hakkına sahiptir. Üçüncü taraflarla paylaşım yasaktır.</p>
             </div>
         </div>
@@ -997,67 +997,7 @@
                 </div>
             </div>
         </div>
- <div style="text-align:center; margin: 40px 0;">
-            <button id="download-pdf-btn" style="
-                background: var(--primary-blue);
-                color: white;
-                font-size: 1.1em;
-                font-weight: 600;
-                padding: 16px 32px;
-                border-radius: 30px;
-                border: none;
-                box-shadow: 0 4px 15px var(--shadow-light);
-                cursor: pointer;
-                transition: background 0.3s;
-            ">
-                📄 PDF Olarak İndir
-            </button>
-        </div>
-<script>
-document.getElementById('download-pdf-btn').onclick = function() {
-    const container = document.querySelector('.container');
-    html2canvas(container, {
-        scale: 1, // Daha düşük çözünürlük
-        backgroundColor: '#fff', // Arka planı beyaz yap
-        useCORS: true
-    }).then(canvas => {
-        const imgData = canvas.toDataURL('image/jpeg', 0.8); // JPEG ve kalite ayarı biraz daha düşük
-        const pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
-        const pageWidth = pdf.internal.pageSize.getWidth();
-        const pageHeight = pdf.internal.pageSize.getHeight();
 
-        // Kenar boşlukları (mm)
-        const marginTop = 20;
-        const marginBottom = 20;
-        const marginLeft = 15;
-        const marginRight = 15;
-        const usableWidth = pageWidth - marginLeft - marginRight;
-        const usableHeight = pageHeight - marginTop - marginBottom;
-
-        // Görselin boyutları (mm)
-        const imgProps = pdf.getImageProperties(imgData);
-        const imgWidth = usableWidth;
-        const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
-
-        let position = 0;
-        // Çok sayfa için bölerek ekle
-        while (position < imgHeight) {
-            pdf.addImage(
-                imgData,
-                'JPEG',
-                marginLeft,
-                marginTop - position,
-                imgWidth,
-                imgHeight
-            );
-            position += usableHeight;
-            if (position < imgHeight) pdf.addPage();
-        }
-        pdf.save('vegawest_teklif.pdf');
-    });
-};
-</script>
-        <!-- PDF İndir Butonu Sonu -->
         <div class="footer">
             <div class="footer-grid">
                 <div class="footer-item">
