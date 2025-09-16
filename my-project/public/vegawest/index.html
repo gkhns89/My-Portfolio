@@ -416,6 +416,8 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            width: 100%;
+            box-sizing: border-box;
         }
         
         .payment-card::before {
@@ -607,6 +609,17 @@
                 text-align: left;
                 font-size: 1em;
             }
+            .payment-options {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .payment-card {
+                padding: 18px 10px;
+                border-radius: 12px;
+                min-width: 0;
+                width: 100%;
+                box-sizing: border-box;
+            }
         }
         
         .guarantee-badge {
@@ -679,6 +692,35 @@
             font-weight: 500;
             width: 120px;
             text-align: center;
+        }
+        .roadmap-table-wrapper {
+            position: relative;
+        }
+        .scroll-hint {
+            display: none;
+        }
+        @media (max-width: 400px) {
+            .roadmap-table-wrapper .scroll-hint {
+                display: block;
+                position: absolute;
+                top: 2px;
+                left: 2px;
+                z-index: 10;
+                background: rgba(30,135,180,0.08);
+                color: var(--primary-blue);
+                font-size: 0.95em;
+                padding: 4px 12px 4px 8px;
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(30,135,180,0.07);
+                pointer-events: none;
+                transition: opacity 0.5s;
+                opacity: 1;
+                animation: scrollHintFadeIn 0.7s;
+            }
+            @keyframes scrollHintFadeIn {
+                from { opacity: 0; transform: translateY(-8px);}
+                to { opacity: 1; transform: translateY(0);}
+            }
         }
     </style>
 </head>
@@ -888,7 +930,10 @@
                         </div>
                     </div>
                 </div>
-                <div style="overflow-x:auto;">
+                <div class="roadmap-table-wrapper" style="overflow-x:auto; position:relative;">
+                    <div class="scroll-hint" id="roadmap-scroll-hint">
+                        <span>Tabloyu sağa kaydırabilirsiniz →</span>
+                    </div>
                     <table class="roadmap-table">
                         <thead>
                             <tr>
@@ -1041,5 +1086,20 @@
             </div>
         </div>
     </div>
+    <script>
+        // Hide scroll hint only when user scrolls
+        function hideScrollHint() {
+            var hint = document.getElementById('roadmap-scroll-hint');
+            if (hint) hint.style.opacity = '0';
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            var wrapper = document.querySelector('.roadmap-table-wrapper');
+            var hint = document.getElementById('roadmap-scroll-hint');
+            if (wrapper && hint) {
+                wrapper.addEventListener('scroll', hideScrollHint);
+                // setTimeout(hideScrollHint, 3000); // kaldırıldı, otomatik kaybolmayacak
+            }
+        });
+    </script>
 </body>
 </html>
