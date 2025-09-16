@@ -66,6 +66,35 @@
             overflow: hidden;
         }
         
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: 600;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-placeholder:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        
         .header::before {
             content: '';
             position: absolute;
@@ -139,17 +168,48 @@
             border-left: 4px solid var(--primary-blue);
         }
         
+        .freelancer-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .freelancer-logo {
+            flex-shrink: 0;
+        }
+        
+        .freelancer-info {
+            flex: 1;
+        }
+        
         .freelancer-section h2 {
             color: var(--primary-blue);
             margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 10px;
+            border: none;
+            padding: 0;
         }
         
         .freelancer-section h2::before {
             content: '👨‍💻';
             font-size: 1.2em;
+        }
+        
+        .freelancer-section h2::after {
+            display: none;
+        }
+        
+        .white-bg {
+            background: white !important;
+            color: var(--primary-blue) !important;
+            border: 2px solid rgba(30, 135, 180, 0.2) !important;
+        }
+        
+        .white-bg:hover {
+            background: #f8fafc !important;
+            border-color: var(--primary-blue) !important;
         }
         
         h2 {
@@ -223,12 +283,15 @@
             margin-bottom: 20px;
             flex-wrap: wrap;
             gap: 15px;
+            min-height: 80px;
         }
         
         .service-meta {
             display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-end;
+            min-width: 200px;
         }
         
         .meta-item {
@@ -239,6 +302,12 @@
             font-weight: 500;
             color: var(--primary-blue);
             border: 1px solid rgba(30, 135, 180, 0.1);
+            text-align: center;
+            min-width: 120px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .price-tag {
@@ -249,6 +318,12 @@
             font-size: 1.2em;
             font-weight: 600;
             box-shadow: 0 4px 15px var(--shadow-medium);
+            text-align: center;
+            min-width: 120px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         ul {
@@ -269,8 +344,7 @@
             left: 0;
             color: var(--primary-blue);
             font-size: 0.8em;
-            top: 50%;
-            transform: translateY(-50%);
+            top: 12px;
         }
         
         ul ul li::before {
@@ -282,7 +356,7 @@
             background: linear-gradient(135deg, rgba(130, 161, 170, 0.1) 0%, rgba(30, 135, 180, 0.05) 100%);
             border: 1px solid rgba(130, 161, 170, 0.3);
             border-left: 4px solid var(--secondary-teal);
-            padding: 25px;
+            padding: 25px 60px 25px 25px;
             margin: 30px 0;
             border-radius: 12px;
             position: relative;
@@ -294,6 +368,11 @@
             top: 25px;
             right: 25px;
             font-size: 1.5em;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .payment-section {
@@ -343,6 +422,8 @@
             font-size: 1.3em;
             margin-bottom: 20px;
             font-weight: 600;
+            text-align: center;
+            line-height: 1.4;
         }
         
         .total-price {
@@ -487,9 +568,14 @@
             border-radius: 20px;
             font-size: 0.85em;
             font-weight: 600;
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin: 10px 0;
             box-shadow: 0 2px 10px rgba(16, 185, 129, 0.3);
+            text-align: center;
+            min-width: 120px;
+            height: 36px;
         }
         
         .icon-section {
@@ -515,11 +601,16 @@
 <body>
     <div class="container">
         <div class="header">
+            <div class="logo-container">
+                <div class="logo-placeholder">
+                    <img src="/assets/g-codes_logo.png" alt="Logo">
+                </div>
+            </div>
             <h1>WordPress Kurumsal Site Revizyon ve Geliştirme Teklifi</h1>
             <div class="header-info">
                 <div class="info-card">
                     <strong>Site</strong>
-                    <span>www.vegawest.com</span>
+                    <span>vegawest.com</span>
                 </div>
                 <div class="info-card">
                     <strong>Tema</strong>
@@ -538,14 +629,23 @@
 
         <div class="content">
             <div class="freelancer-section">
-                <h2>Freelancer Bilgileri</h2>
-                <p><strong>Hazırlayan:</strong> Gökhan Şişman – G.Codes</p>
-                <p><strong>E-posta:</strong> <a href="mailto:dev@gokhan.codes">dev@gokhan.codes</a></p>
-                <p><strong>Web:</strong> <a href="https://gokhan.codes" target="_blank">https://gokhan.codes</a></p>
+                <div class="freelancer-header">
+                    <div class="freelancer-logo">
+                        <div class="logo-placeholder white-bg">
+                            <img src="/assets/g-codes_logo.png" alt="Logo">
+                        </div>
+                    </div>
+                    <div class="freelancer-info">
+                        <h2>Freelancer Bilgileri</h2>
+                        <p><strong>Hazırlayan:</strong> Gökhan Şişman – G.Codes</p>
+                        <p><strong>E-posta:</strong> <a href="mailto:dev@gokhan.codes">dev@gokhan.codes</a></p>
+                        <p><strong>Web:</strong> <a href="https://gokhan.codes" target="_blank">https://gokhan.codes</a></p>
+                    </div>
+                </div>
             </div>
 
             <h2>Mevcut Durum Analizi</h2>
-            <p>VegaWest.com sitesi incelendiğinde aşağıdaki geliştirme ihtiyaçları tespit edilmiştir:</p>
+            <p>vegawest.com sitesi incelendiğinde aşağıdaki geliştirme ihtiyaçları tespit edilmiştir:</p>
             <ul>
                 <li><strong>Arayüz İyileştirmesi ve Mobil Uyumluluk:</strong> Adobe XD tasarım şablonuna göre genel arayüz ve mobil arayüz optimizasyonu gerekli.</li>
                 <li><strong>Site Performansı:</strong> Cache sistemi eksik, sayfa yükleme hızları optimize edilmeli.</li>
@@ -594,7 +694,7 @@
                         <span class="price-tag">15.000 TL</span>
                     </div>
                 </div>
-                <p>Bu hizmet, VegaWest.com web sitesinin mevcut kullanıcı arayüzünü (UI) ve kullanıcı deneyimini (UX) modern standartlara uygun hale getirmeyi, estetik ve işlevselliği açısından geliştirmeyi ve tüm cihazlarda sorunsuz bir deneyim sunmayı amaçlamaktadır.</p>
+                <p>Bu hizmet, vegawest.com web sitesinin mevcut kullanıcı arayüzünü (UI) ve kullanıcı deneyimini (UX) modern standartlara uygun hale getirmeyi, estetik ve işlevselliği açısından geliştirmeyi ve tüm cihazlarda sorunsuz bir deneyim sunmayı amaçlamaktadır.</p>
                 <ul>
                     <li><strong>Adobe XD Şablonuna Uygun Tasarım Uygulaması:</strong> Müşteri tarafından sağlanan tasarım şablonları titizlikle uygulanacaktır.</li>
                     <li><strong>Responsive Düzenlemeler:</strong> Tüm cihazlarda kusursuz görüntüleme için kapsamlı optimizasyon.</li>
@@ -619,13 +719,13 @@
                         </div>
                     </div>
                     <div class="service-meta">
-                        <span class="meta-item">3-4 iş günü</span>
+                        <span class="meta-item">4-5 iş günü</span>
                         <span class="guarantee-badge">%70 Hızlanma Garantisi</span>
-                        <span class="price-tag">7.000 TL</span>
+                        <span class="price-tag">10.000 TL</span>
                     </div>
                 </div>
                 <ul>
-                    <li>WP Rocket Cache kurulumu</li>
+                    <li>WP Rocket Cache Pro kurulumu</li>
                     <li>Görsel optimizasyon (WebP)</li>
                     <li>Veritabanı temizleme, CSS/JS minify ve combine</li>
                     <li>CDN entegrasyonu önerisi</li>
@@ -641,7 +741,8 @@
                         </div>
                     </div>
                     <div class="service-meta">
-                        <span class="price-tag">2.500 TL</span>
+                        <span class="meta-item">1-2 iş günü</span>
+                        <span class="price-tag">5.000 TL</span>
                     </div>
                 </div>
                 <ul>
@@ -661,6 +762,7 @@
                         </div>
                     </div>
                     <div class="service-meta">
+                        <span class="meta-item">3-4 iş günü</span>
                         <span class="price-tag">10.000 TL</span>
                     </div>
                 </div>
@@ -680,6 +782,10 @@
                             <h3>Ek Hizmetler</h3>
                         </div>
                     </div>
+                    <div class="service-meta">
+                        <span class="meta-item">2-3 iş günü</span>
+                        <span class="price-tag">8.500 TL</span>
+                    </div>
                 </div>
                 <ul>
                     <li><strong>WoodMart Tema Özelleştirmeleri:</strong> Header/Footer, renk ve tipografi güncellemeleri (5.000 TL)</li>
@@ -694,19 +800,19 @@
                     <div class="payment-card">
                         <h4>💳 Tek Seferlik Ödeme</h4>
                         <div style="text-align: center;">
-                            <div style="font-size: 1.1em; color: var(--dark-gray); text-decoration: line-through;">49.500 TL</div>
+                            <div style="font-size: 1.1em; color: var(--dark-gray); text-decoration: line-through;">57.000 TL</div>
                             <div class="discount">%5 İndirim</div>
-                            <div class="total-price">47.025 TL</div>
+                            <div class="total-price">54.150 TL</div>
                             <p><strong>Proje Kontrol Ücreti:</strong> 8.500 TL (başlangıçta)</p>
                         </div>
                     </div>
                     
                     <div class="payment-card">
-                        <h4>📅 Aylık Ödeme Planı (12 Ay)</h4>
+                        <h4>📅 Aylık Ödeme Planı<br><span style="white-space: nowrap;">(12 Ay)</span></h4>
                         <div style="text-align: center;">
-                            <p><strong>Peşinat:</strong> 25.000 TL</p>
-                            <p><strong>Aylık:</strong> 2.050 TL × 12 ay</p>
-                            <div class="total-price">49.600 TL</div>
+                            <p><strong>Peşinat:</strong> 28.500 TL</p>
+                            <p><strong>Aylık:</strong> 2.375 TL × 12 ay</p>
+                            <div class="total-price">57.000 TL</div>
                         </div>
                         <div class="note" style="margin-top: 20px;">
                             <p><strong>Not:</strong> Aylık ödeme planında proje tamamlandıktan sonra Aylık Sistem Kontrol Hizmeti zorunludur.</p>
