@@ -1013,38 +1013,47 @@
                 📄 PDF Olarak İndir
             </button>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-        <script>
-        document.getElementById('download-pdf-btn').onclick = function() {
-            const container = document.querySelector('.container');
-            html2canvas(container, {scale:2}).then(canvas => {
-                const imgData = canvas.toDataURL('image/png');
-                const pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
-                const pageWidth = pdf.internal.pageSize.getWidth();
-                const pageHeight = pdf.internal.pageSize.getHeight();
+<script>
+document.getElementById('download-pdf-btn').onclick = function() {
+    const container = document.querySelector('.container');
+    html2canvas(container, {
+        scale: 1, // Daha düşük çözünürlük
+        backgroundColor: '#fff', // Arka planı beyaz yap
+        useCORS: true
+    }).then(canvas => {
+        const imgData = canvas.toDataURL('image/jpeg', 0.85); // JPEG ve kalite ayarı
+        const pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
+        const pageWidth = pdf.internal.pageSize.getWidth();
+        const pageHeight = pdf.internal.pageSize.getHeight();
 
-                // Görselin boyutları (px)
-                const imgProps = pdf.getImageProperties(imgData);
-                const imgWidth = pageWidth;
-                const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
+        // Kenar boşlukları (mm)
+        const margin = 15;
+        const usableWidth = pageWidth - margin * 2;
+        const usableHeight = pageHeight - margin * 2;
 
-                let position = 0;
-                // Eğer içerik tek sayfaya sığmıyorsa, bölerek ekle
-                if (imgHeight <= pageHeight) {
-                    pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-                } else {
-                    // Çok sayfa için bölerek ekle
-                    while (position < imgHeight) {
-                        pdf.addImage(imgData, 'PNG', 0, -position, imgWidth, imgHeight);
-                        position += pageHeight;
-                        if (position < imgHeight) pdf.addPage();
-                    }
-                }
-                pdf.save('vegawest_teklif.pdf');
-            });
-        };
-        </script>
+        // Görselin boyutları (mm)
+        const imgProps = pdf.getImageProperties(imgData);
+        const imgWidth = usableWidth;
+        const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
+
+        let position = 0;
+        // Çok sayfa için bölerek ekle
+        while (position < imgHeight) {
+            pdf.addImage(
+                imgData,
+                'JPEG',
+                margin,
+                margin - position,
+                imgWidth,
+                imgHeight
+            );
+            position += usableHeight;
+            if (position < imgHeight) pdf.addPage();
+        }
+        pdf.save('vegawest_teklif.pdf');
+    });
+};
+</script>
         <!-- PDF İndir Butonu Sonu -->
         <div class="footer">
             <div class="footer-grid">
