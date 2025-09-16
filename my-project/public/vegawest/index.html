@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VegaWest.com Kurumsal Site Revizyon ve Geliştirme Teklifi</title>
+    <title>vegawest.com Kurumsal Site Revizyon ve Geliştirme Teklifi</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
@@ -65,33 +65,50 @@
             position: relative;
             overflow: hidden;
         }
-        
+
+              /* Logo Alanı */
         .logo-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .logo-placeholder {
-            width: 80px;
-            height: 80px;
+            margin-bottom: 40px;
+            padding: 0;
+            background: none;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            width: 180px;
+            height: 180px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.9em;
-            font-weight: 600;
-            color: white;
-            transition: all 0.3s ease;
+            margin: 0 auto 40px auto;
+            box-shadow: 0 10px 30px rgba(56, 36, 47, 0.12);
+            position: relative;
+            overflow: visible;
+        }
+        
+        .logo-placeholder {
+            width: 160px;
+            height: 160px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(212, 181, 196, 0.3) 100%);
+            border: 3px solid rgba(80, 102, 90, 0.3);
+            border-radius: 50%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(56, 36, 47, 0.2);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .logo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
         }
         
         .logo-placeholder:hover {
-            background: rgba(255, 255, 255, 0.2);
             transform: scale(1.05);
         }
         
@@ -553,6 +570,7 @@
             
             .service-meta {
                 width: 100%;
+                align-items: flex-start;
             }
             
             .meta-item {
@@ -596,6 +614,42 @@
             color: white;
             font-size: 1.3em;
         }
+
+        /* Yol Haritası Tablosu Stilleri */
+        .roadmap-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1em;
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px var(--shadow-light);
+        }
+        .roadmap-table th, .roadmap-table td {
+            padding: 16px 12px;
+            border-bottom: 1px solid var(--light-gray);
+            text-align: left;
+        }
+        .roadmap-table th {
+            background: var(--gradient-secondary);
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+        .roadmap-table tr:last-child td {
+            border-bottom: none;
+        }
+        .roadmap-table td.roadmap-step {
+            font-weight: 600;
+            color: var(--secondary-teal);
+            width: 160px;
+        }
+        .roadmap-table td.roadmap-duration {
+            color: var(--primary-blue);
+            font-weight: 500;
+            width: 120px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -622,7 +676,7 @@
                 </div>
                 <div class="info-card">
                     <strong>Tarih</strong>
-                    <span>15 Eylül 2025</span>
+                    <span>16 Eylül 2025</span>
                 </div>
             </div>
         </div>
@@ -794,6 +848,71 @@
                 </ul>
             </div>
 
+            <!-- Yol Haritası Bölümü (Tablo) -->
+            <div class="service-card">
+                <div class="service-header">
+                    <div>
+                        <div class="icon-section">
+                            <div class="icon-box">🗺️</div>
+                            <h3>Proje Yol Haritası</h3>
+                        </div>
+                    </div>
+                </div>
+                <div style="overflow-x:auto;">
+                    <table class="roadmap-table">
+                        <thead>
+                            <tr>
+                                <th>Aşama</th>
+                                <th>Açıklama</th>
+                                <th>Süre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="roadmap-step">1. Ön Hazırlık</td>
+                                <td>Site yedeği, demo ortamı kurulumu, tema ve eklenti uyumluluk testleri</td>
+                                <td class="roadmap-duration">2-3 iş günü</td>
+                            </tr>
+                            <tr>
+                                <td class="roadmap-step">2. Arayüz & Mobil Optimizasyon</td>
+                                <td>Adobe XD şablonuna uygun tasarım, responsive ve mobil hız iyileştirmeleri</td>
+                                <td class="roadmap-duration">8-10 iş günü</td>
+                            </tr>
+                            <tr>
+                                <td class="roadmap-step">3. Performans Artırımı</td>
+                                <td>Cache kurulumu, görsel ve veritabanı optimizasyonu, CDN önerisi</td>
+                                <td class="roadmap-duration">4-5 iş günü</td>
+                            </tr>
+                            <tr>
+                                <td class="roadmap-step">4. Sosyal Medya Entegrasyonu</td>
+                                <td>Instagram Feed Pro kurulumu ve özel tasarım</td>
+                                <td class="roadmap-duration">1-2 iş günü</td>
+                            </tr>
+                            <tr>
+                                <td class="roadmap-step">5. Çoklu Dil Desteği</td>
+                                <td>WPML ile İngilizce entegrasyonu, menü ve widget çevirileri</td>
+                                <td class="roadmap-duration">3-4 iş günü</td>
+                            </tr>
+                            <tr>
+                                <td class="roadmap-step">6. Ek Hizmetler</td>
+                                <td>Tema özelleştirme, SSL ve güvenlik, otomatik yedekleme</td>
+                                <td class="roadmap-duration">2-3 iş günü</td>
+                            </tr>
+                            <tr>
+                                <td class="roadmap-step">7. Test & Yayına Alma</td>
+                                <td>Tüm geliştirmelerin test edilmesi ve canlıya geçiş</td>
+                                <td class="roadmap-duration">1 iş günü</td>
+                            </tr>
+                            <tr>
+                                <td class="roadmap-step">8. Destek & Eğitim</td>
+                                <td>Teknik destek, içerik yönetimi eğitimi, aylık sistem kontrol hizmeti</td>
+                                <td class="roadmap-duration">Sürekli</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             <div class="payment-section">
                 <h2 style="text-align: center; margin-top: 0; color: var(--primary-blue);">Ödeme Planı ve Koşullar</h2>
                 <div class="payment-options">
@@ -852,8 +971,8 @@
 
             <h2>Lisans ve Telif Hakları</h2>
             <div class="service-card">
-                <p>Premium eklentiler (WPML, Instagram Feed Pro, gerekirse Elementor Pro) geliştirici hesabımdan alınacaktır. Lisanslar yıllıktır; süresi dolduğunda müşteri yenileme yapabilir. Gelecek yıl fiyatları garanti edilmez.</p>
-                <p>Özel kodlama telif hakları G.Codes'a aittir. Müşteri yalnızca VegaWest.com üzerinde kullanım hakkına sahiptir. Üçüncü taraflarla paylaşım yasaktır.</p>
+                <p>Premium eklentiler (WPML, Instagram Feed Pro, WP Rocket Cache Pro ve gerekirse Elementor Pro) geliştirici hesabımdan alınacaktır. Lisanslar yıllıktır; süresi dolduğunda müşteri yenileme yapabilir. Gelecek yıl fiyatları garanti edilmez.</p>
+                <p>Özel kodlama telif hakları G.Codes'a aittir. Müşteri yalnızca vegawest.com alan adı üzerinde kullanım hakkına sahiptir. Üçüncü taraflarla paylaşım yasaktır.</p>
             </div>
         </div>
 
@@ -870,7 +989,7 @@
                 </div>
                 <div class="contact-item">
                     <strong>Website</strong>
-                    <a href="https://gokhan.codes" target="_blank">gokhan.codes</a>
+                    <a href="https://gokhan.codes" target="_blank" rel="noopener">gokhan.codes</a>
                 </div>
                 <div class="contact-item">
                     <strong>Çalışma Saatleri</strong>
@@ -878,17 +997,67 @@
                 </div>
             </div>
         </div>
+ <div style="text-align:center; margin: 40px 0;">
+            <button id="download-pdf-btn" style="
+                background: var(--primary-blue);
+                color: white;
+                font-size: 1.1em;
+                font-weight: 600;
+                padding: 16px 32px;
+                border-radius: 30px;
+                border: none;
+                box-shadow: 0 4px 15px var(--shadow-light);
+                cursor: pointer;
+                transition: background 0.3s;
+            ">
+                📄 PDF Olarak İndir
+            </button>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script>
+        document.getElementById('download-pdf-btn').onclick = function() {
+            const container = document.querySelector('.container');
+            html2canvas(container, {scale:2}).then(canvas => {
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
+                const pageWidth = pdf.internal.pageSize.getWidth();
+                const pageHeight = pdf.internal.pageSize.getHeight();
 
+                // Görselin boyutları (px)
+                const imgProps = pdf.getImageProperties(imgData);
+                const imgWidth = pageWidth;
+                const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
+
+                let position = 0;
+                // Eğer içerik tek sayfaya sığmıyorsa, bölerek ekle
+                if (imgHeight <= pageHeight) {
+                    pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+                } else {
+                    // Çok sayfa için bölerek ekle
+                    while (position < imgHeight) {
+                        pdf.addImage(imgData, 'PNG', 0, -position, imgWidth, imgHeight);
+                        position += pageHeight;
+                        if (position < imgHeight) pdf.addPage();
+                    }
+                }
+                pdf.save('vegawest_teklif.pdf');
+            });
+        };
+        </script>
+        <!-- PDF İndir Butonu Sonu -->
         <div class="footer">
             <div class="footer-grid">
                 <div class="footer-item">
                     <strong>Teklif Geçerlilik:</strong> 15 gün
                 </div>
                 <div class="footer-item">
-                    <strong>Hazırlanma Tarihi:</strong> 15 Eylül 2025
+                    <strong>Hazırlanma Tarihi:</strong> 16 Eylül 2025
                 </div>
                 <div class="footer-item">
-                    <strong>Teklif No:</strong> VW-2025-001</div>
+                    <strong>Teklif No:</strong> GC-2025-024</div>
             </div>
         </div>
     </div>
+</body>
+</html>
