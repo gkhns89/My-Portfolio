@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="IFCC Web Sitesi Bakım ve İyileştirme Teklifi">
+    <meta property="og:description" content="IFCC Endüstri için WordPress site bakım ve iyileştirme hizmetleri.">
+    <meta property="og:image" content="https://gokhan.codes/assets/og-image.png">
+    <meta property="og:url" content="https://gokhan.codes/quotes/ifcc/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IFCC Web Sitesi Bakım ve İyileştirme Teklifi">
+    <meta name="twitter:description" content="IFCC Endüstri için WordPress site bakım ve iyileştirme hizmetleri.">
+    <meta name="twitter:image" content="https://gokhan.codes/assets/og-image.png">
+    <title>IFCC Web Sitesi Bakım ve İyileştirme Teklifi</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1e87b4;
+            --secondary-teal: #82a1aa;
+            --dark-gray: #616363;
+            --light-gray: #f8fafc;
+            --white: #ffffff;
+            --shadow-light: rgba(30, 135, 180, 0.08);
+            --shadow-medium: rgba(30, 135, 180, 0.15);
+            --gradient-primary: linear-gradient(135deg, #1e87b4 0%, #82a1aa 100%);
+            --gradient-secondary: linear-gradient(135deg, rgba(30, 135, 180, 0.05) 0%, rgba(130, 161, 170, 0.05) 100%);
+            --accent-green: #10b981;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-gray);
+            background: linear-gradient(135deg, #f0f9ff 0%, #f8fafc 100%);
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow:
+                0 20px 40px rgba(30, 135, 180, 0.1),
+                0 1px 3px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--gradient-primary);
+            z-index: 1;
+        }
+
+        .header {
+            background: var(--gradient-primary);
+            padding: 60px 40px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-container {
+            margin-bottom: 40px;
+            padding: 0;
+            background: none;
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 40px auto;
+            position: relative;
+            overflow: visible;
+        }
+
+        .logo-placeholder {
+            width: 160px;
+            height: 160px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(212, 181, 196, 0.3) 100%);
+            border: 3px solid rgba(80, 102, 90, 0.3);
+            border-radius: 50%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(56, 36, 47, 0.2);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .logo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+        }
+
+        .logo-placeholder:hover {
+            transform: scale(1.05);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(180deg);
+            }
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 12px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .info-card strong {
+            display: block;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            opacity: 0.9;
+        }
+
+        .info-card span {
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .freelancer-section {
+            background: var(--gradient-secondary);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .freelancer-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .freelancer-logo {
+            flex-shrink: 0;
+        }
+
+        .freelancer-info {
+            flex: 1;
+        }
+
+        .freelancer-section h2 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            padding: 0;
+        }
+
+        .freelancer-section h2::before {
+            content: '👨‍💻';
+            font-size: 1.2em;
+        }
+
+        .freelancer-section h2::after {
+            display: none;
+        }
+
+        .white-bg {
+            background: white !important;
+            color: var(--primary-blue) !important;
+            border: 2px solid rgba(30, 135, 180, 0.2) !important;
+        }
+
+        .white-bg:hover {
+            background: #f8fafc !important;
+            border-color: var(--primary-blue) !important;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin: 20px 0 20px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-gray);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--primary-blue);
+        }
+
+        h3 {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: var(--secondary-teal);
+            margin: 30px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 2px solid var(--light-gray);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 25px 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 10px 30px var(--shadow-light);
+            transform: translateY(-2px);
+        }
+
+        .service-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            gap: 15px;
+            min-height: 80px;
+        }
+
+        .service-meta {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-end;
+            min-width: 200px;
+        }
+
+        .meta-item {
+            background: var(--gradient-secondary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+            color: var(--primary-blue);
+            border: 1px solid rgba(30, 135, 180, 0.1);
+            text-align: center;
+            min-width: 120px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .price-tag {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 1.2em;
+            font-weight: 600;
+            box-shadow: 0 4px 15px var(--shadow-medium);
+            text-align: center;
+            min-width: 120px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding: 8px 0 8px 25px;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        ul li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-size: 0.8em;
+            top: 12px;
+        }
+
+        .note {
+            background: linear-gradient(135deg, rgba(130, 161, 170, 0.1) 0%, rgba(30, 135, 180, 0.05) 100%);
+            border: 1px solid rgba(130, 161, 170, 0.3);
+            border-left: 4px solid var(--secondary-teal);
+            padding: 25px 60px 25px 25px;
+            margin: 30px 0;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .note::before {
+            content: '💡';
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 1.5em;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pricing-section {
+            background: var(--gradient-secondary);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            border: 2px solid rgba(30, 135, 180, 0.1);
+        }
+
+        .pricing-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px var(--shadow-light);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .pricing-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px var(--shadow-medium);
+        }
+
+        .pricing-card h4 {
+            color: var(--primary-blue);
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .total-price {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .price-period {
+            text-align: center;
+            color: var(--dark-gray);
+            font-size: 1em;
+            margin-bottom: 25px;
+        }
+
+        .contact-section {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 12px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-item {
+            font-size: 0.95em;
+        }
+
+        .footer-item strong {
+            color: var(--secondary-teal);
+        }
+
+        strong {
+            color: var(--dark-gray);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-teal);
+            text-decoration: underline;
+        }
+
+        .icon-section {
+            width: 100%;
+            max-width: 700px;
+            min-width: 70%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3em;
+        }
+
+        .highlight-badge {
+            background: var(--accent-green);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .company-info {
+            background: linear-gradient(135deg, rgba(30, 135, 180, 0.05) 0%, rgba(130, 161, 170, 0.08) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .company-info h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .company-info p {
+            line-height: 1.8;
+            color: var(--dark-gray);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+
+            .header {
+                padding: 40px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .service-card,
+            .pricing-section,
+            .contact-section {
+                padding: 25px 20px;
+            }
+
+            .service-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .service-meta {
+                width: 100%;
+                align-items: flex-start;
+            }
+
+            .freelancer-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .pricing-options {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .pricing-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo-placeholder">
+                    <img src="../../assets/g-codes_logo.png" alt="G.Codes Logo">
+                </div>
+            </div>
+            <h1>Web Sitesi Bakım ve İyileştirme Teklifi</h1>
+            <div class="header-info">
+                <div class="info-card">
+                    <strong>Firma</strong>
+                    <span>IFCC Endüstri</span>
+                </div>
+                <div class="info-card">
+                    <strong>Site</strong>
+                    <span>ifcc.com.tr</span>
+                </div>
+                <div class="info-card">
+                    <strong>Platform</strong>
+                    <span>WordPress</span>
+                </div>
+                <div class="info-card">
+                    <strong>Tarih</strong>
+                    <span>28 Ekim 2025</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="company-info">
+                <h3>🏭 IFCC Endüstri Tesisleri Hakkında</h3>
+                <p><strong>IFCC Endüstri Tesisleri İmalat Mühendislik ve Danışmanlık LTD. ŞTİ.</strong>, 2021 yılında
+                    kurulduğundan bu yana sektördeki en yüksek kalite standartlarında hizmet sunmayı amaçlamaktadır.
+                    Liman ve iskele ekipmanlarının tedariği, montajı ve devreye alımından enerji, akaryakıt ve kimyasal
+                    tesislerin altyapı, üstyapı, borulama, tank imalatı ve temizliğine kadar geniş bir yelpazede hizmet
+                    vererek, müşterilerimize güvenli, verimli ve sürdürülebilir çözümler sağlamaktadır.</p>
+            </div>
+
+            <div class="freelancer-section">
+                <div class="freelancer-header">
+                    <div class="freelancer-logo">
+                        <div class="logo-placeholder white-bg">
+                            <img src="../../assets/g-codes_logo.png" alt="G.Codes Logo">
+                        </div>
+                    </div>
+                    <div class="freelancer-info">
+                        <h2>Hizmet Sağlayıcı Bilgileri</h2>
+                        <p><strong>Hazırlayan:</strong> Gökhan Şişman – G.Codes</p>
+                        <p><strong>E-posta:</strong> <a href="mailto:dev@gokhan.codes">dev@gokhan.codes</a></p>
+                        <p><strong>Web:</strong> <a href="https://gokhan.codes" target="_blank"
+                                rel="noopener">https://gokhan.codes</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>📋 Teklif Özeti</h2>
+            <p>IFCC Endüstri Tesisleri'nin mevcut WordPress sitesi için kapsamlı bakım ve iyileştirme hizmeti
+                sunulmaktadır. Hizmetimiz iki ana bileşenden oluşmaktadır:</p>
+
+            <div class="pricing-section">
+                <div class="pricing-options">
+                    <div class="pricing-card">
+                        <h4>🚀 İlk İyileştirme Paketi</h4>
+                        <div class="total-price">10.000 TL</div>
+                        <div class="price-period">Tek Seferlik Ödeme (Peşin)</div>
+                        <ul>
+                            <li>Kapsamlı site analizi ve değerlendirme</li>
+                            <li>CSS ve tasarım iyileştirmeleri</li>
+                            <li>Performans optimizasyonu</li>
+                            <li>Mobil uyumluluk kontrolleri</li>
+                            <li>Güvenlik taraması ve düzeltmeler</li>
+                            <li>SEO temel optimizasyonu</li>
+                            <li>Görsel optimizasyonu</li>
+                        </ul>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h4>🛡️ Standart Bakım Planı</h4>
+                        <div class="total-price">2.500 TL</div>
+                        <div class="price-period">Aylık Abonelik</div>
+                        <ul>
+                            <li>WordPress çekirdeği güncellemeleri</li>
+                            <li>Tüm eklenti ve tema güncellemeleri</li>
+                            <li>Aylık tam site yedeği</li>
+                            <li>4 adet içerik/veri girişi</li>
+                            <li>7/24 uptime takibi ve izleme</li>
+                            <li>Performans takibi ve raporlama</li>
+                            <li>Güvenlik taraması ve spam temizliği</li>
+                            <li>Küçük hata düzeltmeleri</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2>🔧 İlk İyileştirme Paketi Detayları</h2>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div>
+                        <div class="icon-section">
+                            <div class="icon-box">🔍</div>
+                            <h3>Site Analizi ve Değerlendirme</h3>
+                        </div>
+                    </div>
+                    <div class="service-meta">
+                        <span class="meta-item">Dahil</span>
+                    </div>
+                </div>
+                <ul>
+                    <li>Mevcut sitenin detaylı incelenmesi</li>
+                    <li>Performans metriklerinin ölçülmesi</li>
+                    <li>Güvenlik açıklarının tespiti</li>
+                    <li>SEO uyumluluk kontrolü</li>
+                    <li>Kullanıcı deneyimi (UX) analizi</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div>
+                        <div class="icon-section">
+                            <div class="icon-box">🎨</div>
+                            <h3>Tasarım ve CSS İyileştirmeleri</h3>
+                        </div>
+                    </div>
+                    <div class="service-meta">
+                        <span class="meta-item">Dahil</span>
+                    </div>
+                </div>
+                <ul>
+                    <li>Gerekli görülen CSS düzenlemeleri</li>
+                    <li>Responsive tasarım optimizasyonları</li>
+                    <li>Görsel hiyerarşi iyileştirmeleri</li>
+                    <li>Renk ve tipografi düzenlemeleri</li>
+                    <li>Buton ve etkileşim elementleri güncelleme</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div>
+                        <div class="icon-section">
+                            <div class="icon-box">⚡</div>
+                            <h3>Performans ve Optimizasyon</h3>
+                        </div>
+                    </div>
+                    <div class="service-meta">
+                        <span class="meta-item">Dahil</span>
+                    </div>
+                </div>
+                <ul>
+                    <li>Sayfa yükleme hızı optimizasyonu</li>
+                    <li>Görsel sıkıştırma ve optimizasyon (WebP dönüşümü)</li>
+                    <li>Veritabanı temizleme ve optimizasyon</li>
+                    <li>Cache yapılandırması</li>
+                    <li>CSS/JS dosyalarının minify edilmesi</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div>
+                        <div class="icon-section">
+                            <div class="icon-box">🔒</div>
+                            <h3>Güvenlik ve Koruma</h3>
+                        </div>
+                    </div>
+                    <div class="service-meta">
+                        <span class="meta-item">Dahil</span>
+                    </div>
+                </div>
+                <ul>
+                    <li>Kapsamlı güvenlik taraması</li>
+                    <li>Tespit edilen açıkların kapatılması</li>
+                    <li>Güvenlik duvarı yapılandırması</li>
+                    <li>Brute force saldırı koruması</li>
+                    <li>SSL sertifikası kontrolü</li>
+                </ul>
+            </div>
+
+            <div class="note">
+                <p><strong>Önemli Not:</strong> İlk iyileştirme paketi ortalama 1-2 hafta içerisinde tamamlanacaktır. Bu
+                    süre sitenin mevcut durumuna göre değişiklik gösterebilir. Tüm işlemler tamamlandıktan sonra detaylı
+                    bir rapor sunulacaktır.</p>
+            </div>
+
+            <h2>🛡️ Aylık Standart Bakım Planı</h2>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div>
+                        <div class="icon-section">
+                            <div class="icon-box">🔄</div>
+                            <h3>Güncellemeler ve Yedekleme</h3>
+                        </div>
+                    </div>
+                    <div class="service-meta">
+                        <span class="meta-item">Aylık</span>
+                    </div>
+                </div>
+                <ul>
+                    <li><strong>WordPress Çekirdeği Güncellemeleri:</strong> Güvenlik ve performans güncellemeleri
+                        düzenli olarak uygulanır</li>
+                    <li><strong>Eklenti Güncellemeleri:</strong> Tüm eklentiler uyumluluk kontrolleriyle güncellenir
+                    </li>
+                    <li><strong>Tema Güncellemeleri:</strong> Tema versiyonu güvenli şekilde güncellenir</li>
+                    <li><strong>Aylık Tam Yedekleme:</strong> Veritabanı ve dosya sistemi tam yedeği alınır</li>
+                    <li><strong>Yedek Saklama:</strong> Son 3 aylık yedekler güvenli ortamda saklanır</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div>
+                        <div class="icon-section">
+                            <div class="icon-box">📝</div>
+                            <h3>İçerik ve Veri Yönetimi</h3>
+                        </div>
+                    </div>
+                    <div class="service-meta">
+                        <span class="meta-item">4 Adet/Ay</span>
+                    </div>
+                </div>
+                <ul>
+                    <li>Ayda 4 adete kadar basit içerik ekleme veya güncelleme</li>
+                    <li>Proje/ürün sayfası ekleme</li>
+                    <li>Blog yazısı yükleme ve düzenleme</li>
+                    <li>Galeri ve görsel güncellemeleri</li>
+                    <li>İletişim bilgileri ve döküman yüklemeleri</li>
+                </ul>
+                <div class="note">
+                    <p><strong>Not:</strong> Karmaşık içerik çalışmaları veya özel tasarım gerektiren eklemeler ek
+                        ücretlendirmeye tabidir.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div>
+                        <div class="icon-section">
+                            <div class="icon-box">📊</div>
+                            <h3>İzleme ve Raporlama</h3>
+                        </div>
+                    </div>
+                    <div class="service-meta">
+                        <span class="meta-item">7/24</span>
+                    </div>
+                </div>
+                <ul>
+                    <li><strong>7/24 Uptime Takibi:</strong> Site kesinti durumlarında anında müdahale</li>
+                    <li><strong>Performans Takibi:</strong> Sayfa yükleme süreleri ve performans metrikleri izlenir</li>
+                    <li><strong>Güvenlik İzleme:</strong> Şüpheli aktivitelerin tespiti ve engellenmesi</li>
+                    <li><strong>Aylık Rapor:</strong> Yapılan tüm işlemler ve site sağlık durumu raporlanır</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div>
+                        <div class="icon-section">
+                            <div class="icon-box">🛠️</div>
+                            <h3>Güvenlik ve Bakım</h3>
+                        </div>
+                    </div>
+                    <div class="service-meta">
+                        <span class="meta-item">Sürekli</span>
+                    </div>
+                </div>
+                <ul>
+                    <li><strong>Güvenlik Taraması:</strong> Aylık kapsamlı güvenlik kontrolü</li>
+                    <li><strong>Spam Temizliği:</strong> Yorum ve form spam'lerinin temizlenmesi</li>
+                    <li><strong>Malware Kontrolü:</strong> Zararlı yazılım taraması ve temizliği</li>
+                    <li><strong>Hata Düzeltme:</strong> Küçük teknik hataların giderilmesi</li>
+                    <li><strong>Link Kontrolü:</strong> Kırık linklerin tespiti ve düzeltilmesi</li>
+                </ul>
+            </div>
+
+            <h2>💰 Fiyatlandırma ve Ödeme Koşulları</h2>
+
+            <div class="service-card">
+                <h3>İlk İyileştirme Paketi</h3>
+                <ul>
+                    <li><strong>Tutar:</strong> 10.000 TL</li>
+                    <li><strong>Ödeme Şekli:</strong> Peşin ödeme (Proje başlangıcında)</li>
+                    <li><strong>Teslim Süresi:</strong> 1-2 hafta</li>
+                    <li><strong>Garanti:</strong> İşlem sonrası 30 gün ücretsiz destek</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Aylık Standart Bakım Planı</h3>
+                <ul>
+                    <li><strong>Tutar:</strong> 2.500 TL/ay</li>
+                    <li><strong>Ödeme Şekli:</strong> Her ayın başında peşin ödeme</li>
+                    <li><strong>İlk Ödeme:</strong> İlk iyileştirme paketi tamamlandıktan sonra</li>
+                    <li><strong>İptal:</strong> 1 ay önceden bildirimle iptal edilebilir</li>
+                    <li><strong>Sözleşme:</strong> Aylık yenilenebilir hizmet sözleşmesi</li>
+                </ul>
+            </div>
+
+            <h2>➕ Ek Hizmetler ve Fiyatlandırma</h2>
+
+            <div class="service-card">
+                <p>Standart bakım planına dahil olmayan ek geliştirmeler için aşağıdaki fiyatlandırma uygulanır:</p>
+                <ul>
+                    <li><strong>Yeni Sayfa Tasarımı:</strong> 1.500 - 3.000 TL (karmaşıklığa göre)</li>
+                    <li><strong>Özel Modül/Widget Geliştirme:</strong> 2.000 - 5.000 TL</li>
+                    <li><strong>E-ticaret Entegrasyonu:</strong> 5.000 - 10.000 TL</li>
+                    <li><strong>Üçüncü Parti API Entegrasyonu:</strong> 3.000 - 7.000 TL</li>
+                    <li><strong>Kapsamlı İçerik Girişi:</strong> 500 TL/saat</li>
+                    <li><strong>SEO Optimizasyon (Aylık):</strong> 3.000 TL/ay</li>
+                    <li><strong>Sosyal Medya Entegrasyonu:</strong> 1.500 - 2.500 TL</li>
+                    <li><strong>Çoklu Dil Desteği:</strong> 5.000 - 8.000 TL</li>
+                </ul>
+                <div class="note">
+                    <p><strong>Not:</strong> Ek hizmetler için öncelikle analiz ve teklif sunulur. Müşteri onayı sonrası
+                        işlem başlatılır.</p>
+                </div>
+            </div>
+
+            <h2>📅 Proje Zaman Çizelgesi</h2>
+
+            <div class="service-card">
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                        <thead>
+                            <tr style="background: var(--gradient-secondary);">
+                                <th
+                                    style="padding: 15px; text-align: left; border-bottom: 2px solid var(--primary-blue); color: var(--primary-blue); font-weight: 600;">
+                                    Aşama</th>
+                                <th
+                                    style="padding: 15px; text-align: left; border-bottom: 2px solid var(--primary-blue); color: var(--primary-blue); font-weight: 600;">
+                                    Açıklama</th>
+                                <th
+                                    style="padding: 15px; text-align: center; border-bottom: 2px solid var(--primary-blue); color: var(--primary-blue); font-weight: 600;">
+                                    Süre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--light-gray);">
+                                <td style="padding: 15px; font-weight: 600; color: var(--secondary-teal);">1. Başlangıç
+                                </td>
+                                <td style="padding: 15px;">Sözleşme imzalama, panel erişimleri, ödeme</td>
+                                <td
+                                    style="padding: 15px; text-align: center; color: var(--primary-blue); font-weight: 500;">
+                                    1 gün</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--light-gray);">
+                                <td style="padding: 15px; font-weight: 600; color: var(--secondary-teal);">2. Analiz
+                                </td>
+                                <td style="padding: 15px;">Site detaylı inceleme, sorun tespiti, planlama</td>
+                                <td
+                                    style="padding: 15px; text-align: center; color: var(--primary-blue); font-weight: 500;">
+                                    2-3 gün</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--light-gray);">
+                                <td style="padding: 15px; font-weight: 600; color: var(--secondary-teal);">3.
+                                    İyileştirmeler</td>
+                                <td style="padding: 15px;">CSS düzenlemeleri, performans, güvenlik optimizasyonları</td>
+                                <td
+                                    style="padding: 15px; text-align: center; color: var(--primary-blue); font-weight: 500;">
+                                    5-7 gün</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--light-gray);">
+                                <td style="padding: 15px; font-weight: 600; color: var(--secondary-teal);">4. Test</td>
+                                <td style="padding: 15px;">Kapsamlı test, hata kontrolü, son düzenlemeler</td>
+                                <td
+                                    style="padding: 15px; text-align: center; color: var(--primary-blue); font-weight: 500;">
+                                    2-3 gün</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 15px; font-weight: 600; color: var(--secondary-teal);">5. Teslim
+                                </td>
+                                <td style="padding: 15px;">Rapor sunumu, eğitim, aylık bakım başlangıcı</td>
+                                <td
+                                    style="padding: 15px; text-align: center; color: var(--primary-blue); font-weight: 500;">
+                                    1 gün</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h2>✅ Garanti ve Destek Koşulları</h2>
+
+            <div class="service-card">
+                <h3>İlk İyileştirme Paketi Garantisi</h3>
+                <ul>
+                    <li>İşlem sonrası 30 gün ücretsiz teknik destek</li>
+                    <li>Yapılan iyileştirmelerle ilgili sınırsız hata düzeltme</li>
+                    <li>E-posta ve telefon üzerinden hızlı destek</li>
+                    <li>Acil durumlar için öncelikli müdahale</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Aylık Bakım Planı Garantileri</h3>
+                <ul>
+                    <li>7/24 uptime izleme ve anında müdahale</li>
+                    <li>Güvenlik açıklarına karşı proaktif koruma</li>
+                    <li>Güncellemelerden kaynaklanan sorunların ücretsiz çözümü</li>
+                    <li>Aylık performans raporu</li>
+                    <li>Öncelikli destek hattı</li>
+                </ul>
+            </div>
+
+            <div class="note">
+                <p><strong>Önemli:</strong> Hizmet kapsamı dışındaki özel geliştirme talepleri, ek eklenti lisans
+                    maliyetleri veya üçüncü parti hizmetlerin (hosting, domain, SSL vb.) ücretleri bu teklife dahil
+                    değildir.</p>
+            </div>
+
+            <h2>📋 Sözleşme ve Şartlar</h2>
+
+            <div class="service-card">
+                <ul>
+                    <li><strong>Teklif Geçerlilik:</strong> Bu teklif 15 gün süreyle geçerlidir</li>
+                    <li><strong>Ödeme Yöntemi:</strong> Banka havalesi veya EFT</li>
+                    <li><strong>Fatura:</strong> Tüm ödemeler için yasal fatura düzenlenir</li>
+                    <li><strong>Panel Erişimi:</strong> Proje başlangıcında admin paneli ve hosting erişimleri
+                        gereklidir</li>
+                    <li><strong>Yedekleme:</strong> Proje başlangıcında tam site yedeği alınır</li>
+                    <li><strong>İptal Koşulları:</strong> Aylık plan 1 ay önceden bildirimle iptal edilebilir</li>
+                    <li><strong>Fiyat Güncellemesi:</strong> Aylık bakım planı fiyatları yıllık %10'u geçmeyecek şekilde
+                        güncellenebilir</li>
+                </ul>
+            </div>
+
+            <h2>🎯 Neden G.Codes?</h2>
+
+            <div class="service-card">
+                <ul>
+                    <li><strong>Deneyim:</strong> WordPress uzmanı olarak yıllarca sektör deneyimi</li>
+                    <li><strong>Profesyonellik:</strong> Zamanında teslimat ve net iletişim</li>
+                    <li><strong>Güvenilirlik:</strong> 7/24 erişilebilir teknik destek</li>
+                    <li><strong>Kalite:</strong> Modern standartlara uygun kodlama ve optimizasyon</li>
+                    <li><strong>Şeffaflık:</strong> Tüm işlemler detaylı raporlanır</li>
+                    <li><strong>Sürdürülebilirlik:</strong> Uzun vadeli site sağlığı odaklı yaklaşım</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contact-section" id="contact">
+            <h2 style="color: white; border: none; margin-bottom: 30px;">📞 İletişim Bilgileri</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <strong>Hizmet Sağlayıcı</strong>
+                    <div>Gökhan Şişman – G.Codes</div>
+                </div>
+                <div class="contact-item">
+                    <strong>E-posta</strong>
+                    <a href="mailto:dev@gokhan.codes">dev@gokhan.codes</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Website</strong>
+                    <a href="https://gokhan.codes" target="_blank" rel="noopener">gokhan.codes</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Çalışma Saatleri</strong>
+                    <div>Pazartesi–Cuma 09:00–18:00</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.2);">
+                <h3 style="color: white; margin-bottom: 20px;">🏭 IFCC Endüstri İletişim</h3>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <strong>Yetkili</strong>
+                        <div>Furkan Günhan</div>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Telefon</strong>
+                        <div><a href="tel:+903127040322">0312 704 03 22</a></div>
+                        <div><a href="tel:+905067133377">0506 713 33 77</a></div>
+                    </div>
+                    <div class="contact-item">
+                        <strong>E-posta</strong>
+                        <a href="mailto:info@ifcc.com.tr">info@ifcc.com.tr</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Website</strong>
+                        <a href="https://www.ifcc.com.tr" target="_blank" rel="noopener">ifcc.com.tr</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-grid">
+                <div class="footer-item">
+                    <strong>Teklif Geçerlilik:</strong> 15 gün
+                </div>
+                <div class="footer-item">
+                    <strong>Hazırlanma Tarihi:</strong> 28 Ekim 2025
+                </div>
+                <div class="footer-item">
+                    <strong>Teklif No:</strong> GC-IFCC-2025-001
+                </div>
+            </div>
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p style="font-size: 0.9em; opacity: 0.8;">© 2025 G.Codes - Tüm hakları saklıdır.</p>
+                <p style="font-size: 0.85em; opacity: 0.7; margin-top: 10px;">Bu teklif IFCC Endüstri Tesisleri İmalat
+                    Mühendislik ve Danışmanlık LTD. ŞTİ. için özel olarak hazırlanmıştır.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
