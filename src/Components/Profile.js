@@ -16,27 +16,30 @@ const Profile = () => {
           <h2 className="text-3xl text-[#4338ca] dark:text-[#B7AAFF] font-medium">
             {pData.pTitle}
           </h2>
-
-          <table className="mt-[1.313rem] text-black dark:text-white">
-            <tr className="text-left   leading-8">
-              <td className="font-semibold pr-5 align-top ">{pData.birth}</td>
-              <td>22.09.1989</td>
-            </tr>
-            <tr className="text-left   leading-8">
-              <td className="font-semibold pr-5 align-top"> {pData.city}</td>
-              <td>İstanbul</td>
-            </tr>
-            <tr className="text-left leading-8">
-              <td className="font-semibold  pr-5 align-top"> {pData.edu}</td>
-              <td> {pData.eduDetail}</td>
-            </tr>
-            <tr className="text-left  leading-8">
-              <td className="font-semibold  pr-5 min-w-[145px] align-top">
-                {pData.work}
-              </td>
-              <td>Frontend, UI</td>
-            </tr>
-          </table>
+          
+            <table className="mt-[1.313rem] text-black dark:text-white">
+              <tbody>
+              <tr className="text-left   leading-8">
+                <td className="font-semibold pr-5 align-top ">{pData.birth}</td>
+                <td>22.09.1989</td>
+              </tr>
+              <tr className="text-left   leading-8">
+                <td className="font-semibold pr-5 align-top"> {pData.city}</td>
+                <td>İstanbul</td>
+              </tr>
+              <tr className="text-left leading-8">
+                <td className="font-semibold  pr-5 align-top"> {pData.edu}</td>
+                <td> {pData.eduDetail}</td>
+              </tr>
+              <tr className="text-left  leading-8">
+                <td className="font-semibold  pr-5 min-w-[145px] align-top">
+                  {pData.work}
+                </td>
+                <td>Frontend, UI</td>
+              </tr>
+              </tbody>
+            </table>
+          
         </div>
         <div>
           <h2 className="text-3xl text-[#4338ca] dark:text-[#B7AAFF]  font-medium">

@@ -25,7 +25,7 @@ const Header = (props) => {
   const hData = contentData[languagePreference.toLowerCase()].header;
 
   // Quotes sayfasındaysa header'ı gösterme
-  if (location.pathname.includes('/quotes')) {
+  if (location.pathname.includes('/quotes-login') || location.pathname.includes('/quotes')) {
     return null;
   }
 
@@ -106,7 +106,7 @@ const Header = (props) => {
             </li>
             <li>
               <button
-                onClick={() => navigate('/quotes')}
+                onClick={() => navigate('/quotes-login')}
                 className="flex items-center gap-2 px-4 py-2 border-2 border-[#3730a3] dark:border-[#BAB2E7] text-[#3730a3] dark:text-[#BAB2E7] rounded-md hover:bg-[#3730a3] hover:text-white dark:hover:bg-[#BAB2E7] dark:hover:text-[#3730a3] transition-all duration-300"
               >
                 <svg

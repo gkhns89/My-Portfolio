@@ -1,29 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { quotesData } from "../../Sources/Data/QuotesData";
+import { validateCode } from "../../Sources/Data/QuotesData";
 
 const QuotesLogin = () => {
   const [code, setCode] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // Eğer session'da firma varsa direkt yönlendir
+    const authorizedCompany = sessionStorage.getItem("authorizedCompany");
+    if (authorizedCompany) {
+      navigate(`/quotes-list/${authorizedCompany}`, { replace: true });
+    }
+  }, [navigate]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setError("");
 
-    // Kodu kontrol et
-    const foundCompany = Object.values(quotesData).find(
-      (company) => company.code === code.trim()
-    );
+    const result = validateCode(code.trim());
 
-    if (foundCompany) {
-      // Kod doğruysa listeye yönlendir
-      const companyKey = Object.keys(quotesData).find(
-        (key) => quotesData[key].code === code.trim()
-      );
-      navigate(`/quotes/view/${companyKey}`);
+    if (result.isValid) {
+      // FirmaKey'i session'a kaydet
+      sessionStorage.setItem("authorizedCompany", result.companyKey);
+      // Yönlendir
+      navigate(`/quotes-list/${result.companyKey}`);
     } else {
-      setError("Geçersiz kod! Lütfen tekrar deneyin.");
+      if (result.reason === "expired") {
+        setError(
+          `Bu kodun geçerlilik süresi dolmuştur. (Son geçerlilik: ${new Date(
+            result.expiryDate
+          ).toLocaleDateString("tr-TR", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          })})`
+        );
+      } else {
+        setError("Geçersiz kod! Lütfen tekrar deneyin.");
+      }
     }
   };
 
@@ -31,7 +47,6 @@ const QuotesLogin = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 px-4">
       <div className="max-w-md w-full">
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8">
-          {/* Logo */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-20 h-20 bg-indigo-100 dark:bg-indigo-900 rounded-full mb-4">
               <svg
@@ -56,7 +71,6 @@ const QuotesLogin = () => {
             </p>
           </div>
 
-          {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label
@@ -109,7 +123,6 @@ const QuotesLogin = () => {
             </button>
           </form>
 
-          {/* Info */}
           <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
             <p className="text-xs text-center text-gray-500 dark:text-gray-400">
               Erişim kodunuzu bulamıyor musunuz?{" "}
@@ -123,7 +136,6 @@ const QuotesLogin = () => {
           </div>
         </div>
 
-        {/* Back to home */}
         <div className="text-center mt-6">
           <a
             href="/"

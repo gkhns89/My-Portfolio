@@ -1,20 +1,39 @@
 import "./App.css";
 import "./index.css";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { toast, Slide, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+// Ana sayfa component'leri
 import Header from "./Components/Header";
 import Hero from "./Components/Hero";
 import Skills from "./Components/Skills";
 import Profile from "./Components/Profile";
 import Projects from "./Components/Projects";
 import Footer from "./Components/Footer";
+
+// Quotes component'leri
 import QuotesLogin from "./Components/Quotes/QuotesLogin";
 import QuotesList from "./Components/Quotes/QuotesList";
-import { toast, Slide, ToastContainer } from "react-toastify";
-import React, { useState, useEffect } from "react";
-import "react-toastify/dist/ReactToastify.css";
 
 // Ana sayfa component'i
 function HomePage({ darkMode, toggleDarkMode }) {
+  useEffect(() => {
+    // Toast sadece ana sayfa yüklendiğinde göster
+    // sessionStorage ile sadece oturum başına bir kez göster
+    const hasShownToast = sessionStorage.getItem('welcomeToastShown');
+    
+    if (!hasShownToast) {
+      toast("Sayfama Hoşgeldiniz!", {
+        position: "top-center",
+        autoClose: 3000,
+        theme: "dark",
+      });
+      sessionStorage.setItem('welcomeToastShown', 'true');
+    }
+  }, []);
+
   return (
     <>
       <div className="w-full my-0 mx-auto pt-[2%] px-[8%] font-normal dark:text-[#ffffff] dark:bg-[#252128] text-[#6B7280] duration-1000">
@@ -33,16 +52,6 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
   
   useEffect(() => {
-    // Toastify
-    const notify = () =>
-      toast("Sayfama Hoşgeldiniz!", {
-        position: "top-center",
-        autoClose: 3000,
-        theme: "dark",
-      });
-
-    notify();
-
     // Page Load Theme Check
     const handleThemeChange = () => {
       if (
@@ -51,10 +60,10 @@ function App() {
           window.matchMedia("(prefers-color-scheme: dark)").matches)
       ) {
         document.documentElement.classList.add("dark");
-        setDarkMode(!darkMode);
+        setDarkMode(true);
       } else {
         document.documentElement.classList.remove("dark");
-        setDarkMode(darkMode);
+        setDarkMode(false);
       }
     };
 
@@ -64,16 +73,18 @@ function App() {
     handleThemeChange();
     // Control for user system preference for dark mode
     darkModeQuery.addEventListener("change", handleThemeChange);
-    // delete eventlistener when unmount of the component
+    
+    // Cleanup
     return () => {
       darkModeQuery.removeEventListener("change", handleThemeChange);
     };
-    // eslint-disable-next-line
   }, []);
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.querySelector("html").classList.toggle("dark", darkMode);
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    document.documentElement.classList.toggle("dark", newDarkMode);
+    localStorage.setItem("theme", JSON.stringify(newDarkMode ? "dark" : "light"));
   };
 
   return (
@@ -83,16 +94,17 @@ function App() {
         {/* Ana sayfa */}
         <Route
           path="/"
-          element={
-            <HomePage darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-          }
+          element={<HomePage darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}
         />
         
         {/* Quotes Login */}
-        <Route path="/quotes" element={<QuotesLogin />} />
+        <Route path="/quotes-login" element={<QuotesLogin />} />
         
         {/* Quotes List */}
-        <Route path="/quotes/view/:companyKey" element={<QuotesList />} />
+        <Route path="/quotes-list/:companyKey" element={<QuotesList />} />
+        
+        {/* 404 - Bulunamayan sayfalar için ana sayfaya yönlendir */}
+        <Route path="*" element={<HomePage darkMode={darkMode} toggleDarkMode={toggleDarkMode} />} />
       </Routes>
     </Router>
   );
