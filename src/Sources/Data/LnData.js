@@ -13,6 +13,8 @@ export const contentData = {
       skills: "Skills",
       projects: "Projects",
       hire: "Hire me",
+      quotes1: "Quotes",
+      quotes2: "Quotes",
     },
     hero: {
       mTitle: "Creative thinker Minimalism lover",
@@ -126,6 +128,8 @@ export const contentData = {
       skills: "Yetenekler",
       projects: "Projeler",
       hire: "E-Posta",
+      quotes1: "Firma Teklifleri",
+      quotes2: "Teklifler",
     },
     hero: {
       mTitle: "Yaratıcı Düşünce Minimalist Düzen",
