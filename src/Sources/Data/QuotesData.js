@@ -5,11 +5,11 @@ const CODES = {
     code: process.env.REACT_APP_IFCC_CODE,
     expiresAt: "2025-11-12", // YYYY-MM-DD formatında (28 Ekim + 15 gün)
   },
-  // Yeni firmalar buraya eklenecek
-  // "acme-2025": {
-  //   code: process.env.REACT_APP_ACME_CODE,
-  //   expiresAt: "2025-11-30",
-  // },
+  "mobikur-2025": {
+    code: process.env.REACT_APP_IFCC_CODE,
+    expiresAt: "2025-11-27", // YYYY-MM-DD formatında (28 Ekim + 15 gün)
+  },
+
 };
 
 export const quotesData = {
@@ -23,6 +23,19 @@ export const quotesData = {
         path: "/quotes/ifcc/",  // HTML'e yönlendir
         status: "active",
         validUntil: "12 Kasım 2025",
+      }
+    ]
+  },
+  "mobik-2025": {
+    companyName: "Mobikur Mobilya",  // Firma adı - sorun değil
+    quotes: [
+      {
+        id: 1,
+        title: "Web Sitesi Bakım Teklifi",  // Genel başlık - detay YOK
+        date: "12 Kasım 2025",
+        path: "/quotes/mobikur/",  // HTML'e yönlendir
+        status: "active",
+        validUntil: "27 Kasım 2025",
       }
     ]
   },
