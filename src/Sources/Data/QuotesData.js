@@ -5,8 +5,8 @@ const CODES = {
     code: process.env.REACT_APP_IFCC_CODE,
     expiresAt: "2025-11-12", // YYYY-MM-DD formatında (28 Ekim + 15 gün)
   },
-  "mobikur-2025": {
-    code: process.env.REACT_APP_IFCC_CODE,
+  "mobi-2025": {
+    code: process.env.REACT_APP_MOBI_CODE,
     expiresAt: "2025-11-27", // YYYY-MM-DD formatında (28 Ekim + 15 gün)
   },
 
@@ -26,7 +26,7 @@ export const quotesData = {
       }
     ]
   },
-  "mobik-2025": {
+  "mobi-2025": {
     companyName: "Mobikur Mobilya",  // Firma adı - sorun değil
     quotes: [
       {
